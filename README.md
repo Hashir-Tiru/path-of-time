@@ -1,4 +1,4 @@
-# KALA CHAKRA — PWA Base v2
+# KALA CHAKRA — PWA Base v3
 
 This is the installable PWA build based on the approved Normal Mobile Data Layer v2.
 
@@ -33,3 +33,6 @@ Open the hosted page once while online and wait for it to finish loading. Then e
 
 ## Release discipline
 Cache name: `kala-chakra-pwa-v2`. Increment the cache version for future releases. Keep this ZIP as the PWA Base v2 reference.
+
+
+Version 3: removed visible personal-data export/import controls. Birth Moment and Death Moment data continue to save automatically in the browser.

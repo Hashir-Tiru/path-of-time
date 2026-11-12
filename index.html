@@ -776,49 +776,14 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
    const v=String(value);memory.set(key,v);
    try{localStorage.setItem(key,v);return true;}catch(e){return false;}
   },
-  all(){
-   const out={version:1,app:"KALA CHAKRA",exportedAt:new Date().toISOString(),data:{}};
-   keys.forEach(k=>{const v=api.get(k);if(v!==null)out.data[k]=v;});
-   return out;
-  },
-  import(obj){
-   if(!obj||obj.app!=="KALA CHAKRA"||!obj.data||typeof obj.data!=="object")throw new Error("This is not a KALA CHAKRA backup.");
-   keys.forEach(k=>{if(typeof obj.data[k]==="string")api.set(k,obj.data[k]);});
-  },
   storageAvailable(){try{const k="__kc_test__";localStorage.setItem(k,"1");localStorage.removeItem(k);return true;}catch(e){return false;}}
  };
  window.KCData=api;
- document.addEventListener("DOMContentLoaded",()=>{
-  const status=document.getElementById("kcDataStatus");
-  const say=t=>{if(status)status.textContent=t;};
-  if(!api.storageAvailable())say("This browser restricts local-file storage. Export your personal-data backup before closing; import it again when reopening the app.");
-  const exp=document.getElementById("kcExportData"),imp=document.getElementById("kcImportData"),file=document.getElementById("kcImportFile");
-  if(exp)exp.addEventListener("click",()=>{
-   const blob=new Blob([JSON.stringify(api.all(),null,2)],{type:"application/json"});
-   const url=URL.createObjectURL(blob),a=document.createElement("a");
-   a.href=url;a.download="kala-chakra-personal-backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
-   say("Personal-data backup exported. Keep this JSON file safe; it can restore your Birth and Death Moments on another device.");
-  });
-  if(imp&&file)imp.addEventListener("click",()=>file.click());
-  if(file)file.addEventListener("change",async()=>{
-   const f=file.files&&file.files[0];if(!f)return;
-   try{api.import(JSON.parse(await f.text()));say("Backup imported. Reloading the app to refresh all cycle readings.");setTimeout(()=>location.reload(),500);}
-   catch(e){say(e.message||"Could not import this backup.");}
-  });
- });
+
 })();
 </script>
 <div class="app">
 <header><h1>PATH OF TIME</h1><p class="sub">Align and transform with the cycles of Time.</p></header>
-<section id="kcDataTools" style="margin:10px auto 14px;padding:10px 12px;border:1px solid #29445a;border-radius:12px;background:#0b2031;max-width:760px">
- <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-  <strong style="font-size:13px;color:#e9bd78">Personal Data</strong>
-  <button type="button" id="kcExportData" style="padding:7px 10px;border-radius:8px">Export backup</button>
-  <button type="button" id="kcImportData" style="padding:7px 10px;border-radius:8px">Import backup</button>
-  <input type="file" id="kcImportFile" accept="application/json,.json" style="display:none">
- </div>
- <p id="kcDataStatus" style="font-size:11px;color:#a9bac8;margin:7px 0 0">Birth and Death Moment data are stored by this browser. Export a backup when using local HTML on mobile.</p>
-</section>
 <nav class="tabs" id="mainTabs">
 <button class="tab active" data-layer="nature">KALA<small>(Conscious Journey)</small></button><button class="tab" data-layer="reclaiming">KALI<small>(Transformative Journey)</small></button>
 </nav>
