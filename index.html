@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PATH OF TIME — Kala Chakra &amp; Kali Spiral</title>
+<title>KALA CHAKRA</title>
 <style>
 :root{--bg:#061321;--panel:#0b2031;--panel2:#10283b;--gold:#e9bd78;--ink:#f4efe6;--muted:#a9bac8;--line:#29445a;--blue:#38a9e9;--red:#f05b64}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#1a3a52,#061321 55%);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
@@ -15,8 +15,8 @@ header{padding:20px 2px 12px;text-align:center}h1{font:500 29px Georgia,serif;le
 .kicker{text-align:center;color:var(--gold);font-size:12px;letter-spacing:1.7px;margin:10px 0 4px}.headline{text-align:center;font:500 23px Georgia,serif;margin:3px 0 5px}.description{text-align:center;color:var(--muted);font-size:13px;margin:0 auto 14px;max-width:520px}
 .cycle-tabs{display:flex;justify-content:center;gap:7px;margin:12px 0}.cycle-chip{border:1px solid var(--line);background:#0b2031;color:#bdcbd5;border-radius:20px;padding:7px 14px;font-size:12px;cursor:pointer}.cycle-chip.active{border-color:var(--gold);color:var(--gold);background:#2a261f}
 .wheel-card{border:1px solid #715b40;border-radius:18px;background:linear-gradient(180deg,#0b2031,#071725);padding:12px 10px 14px;box-shadow:0 10px 35px #0005}
-.wheel{width:min(98vw,540px);height:auto;display:block;margin:auto;touch-action:pan-y}
-#weatherWheel.lunar-wheel{width:min(100vw,580px);max-width:100%;}
+.wheel{width:100%;max-width:520px;height:auto;aspect-ratio:1;display:block;margin:0 auto;touch-action:pan-y}
+#weatherWheel.lunar-wheel{width:100%;max-width:520px;}
 .lunar-key{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;color:#b9cbd7;font-size:11px;margin:7px 0 2px}.lunar-key span{display:flex;align-items:center;gap:5px}.lunar-key i{width:9px;height:9px;border-radius:50%;display:inline-block}
 .lunar-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}.lunar-table th,.lunar-table td{padding:7px 5px;border-bottom:1px solid #29445a;text-align:left}.lunar-table th{color:#eacb98;font-weight:600}.lunar-table td{color:#d4e0e8}.lunar-table tr.current{background:#20394a}.lunar-table .time{white-space:nowrap;color:#f0d5a8}
 .moon-caption{text-align:center;color:#b7c9d5;font-size:11px;margin-top:-4px}
@@ -39,9 +39,9 @@ label{display:block;color:#bdcbd5;font-size:12px;margin:10px 0 5px}input,select{
 .legend{display:flex;flex-wrap:wrap;gap:8px 12px;justify-content:center;margin:13px 0}.key{display:flex;align-items:center;gap:5px;color:#c7d4dd;font-size:10px}.dot{width:9px;height:9px;border-radius:50%}
 .note{font-size:11px;color:#8fa4b5;line-height:1.5;margin:12px 2px}
 
-.birth-subtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0}.birth-chip{background:#10283b;border:1px solid #35536b;color:#cbd8e1;border-radius:9px;padding:10px 5px;font-size:12px;cursor:pointer}.birth-chip.active{background:#e8c58d;color:#17202a;border-color:#e8c58d;font-weight:700}.birth-detail{display:none}.birth-detail.active{display:block}.birth-wheel-card{border:1px solid var(--line);border-radius:14px;background:#0b2031;padding:12px;margin:10px 0}.birth-wheel-card h3{text-align:center;color:#f0d5a8;font:500 17px Georgia,serif;margin:5px 0}.birth-wheel-card .wheel{width:100%;max-width:520px;display:block;margin:0 auto}.birth-wheel-status{text-align:center;color:#d5e1e8;font-size:12px;line-height:1.5;margin:5px 0 9px}.birth-explanation{background:#0b2031;border:1px solid var(--line);border-radius:12px;padding:14px;color:#c5d3dd;font-size:13px;line-height:1.6;margin:12px 0}.birth-explanation h3{color:#f1d4a3;font:500 16px Georgia,serif;margin:3px 0 6px}.imprint-linear{display:grid;gap:9px;margin:14px 0}.imprint-row{display:grid;grid-template-columns:76px 1fr 100px;gap:8px;align-items:center;font-size:11px;color:#d9e5ec}.imprint-track{height:12px;border-radius:20px;background:linear-gradient(90deg,#39a9e8 0%,#39a9e8 49.8%,#e65d67 50.2%,#e65d67 100%);position:relative;border:1px solid #7890a0}.imprint-marker{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;border:2px solid white;background:#f5d49b;transform:translate(-50%,-50%);box-shadow:0 0 8px #f5d49b}.imprint-row b{color:#f1d4a3;font-weight:600}.imprint-ends{display:flex;justify-content:space-between;color:#91a9b9;font-size:10px;margin-left:84px}
+.birth-subtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0}.birth-chip{background:#10283b;border:1px solid #35536b;color:#cbd8e1;border-radius:9px;padding:10px 5px;font-size:12px;cursor:pointer}.birth-chip.active{background:#e8c58d;color:#17202a;border-color:#e8c58d;font-weight:700}.birth-detail{display:none}.birth-detail.active{display:block}.birth-wheel-card{border:1px solid var(--line);border-radius:14px;background:#0b2031;padding:12px;margin:10px 0}.birth-wheel-card h3{text-align:center;color:#f0d5a8;font:500 17px Georgia,serif;margin:5px 0}.birth-wheel-card .wheel{width:100%;max-width:520px;aspect-ratio:1;display:block;margin:0 auto}.birth-wheel-status{text-align:center;color:#d5e1e8;font-size:12px;line-height:1.5;margin:5px 0 9px}.birth-explanation{background:#0b2031;border:1px solid var(--line);border-radius:12px;padding:14px;color:#c5d3dd;font-size:13px;line-height:1.6;margin:12px 0}.birth-explanation h3{color:#f1d4a3;font:500 16px Georgia,serif;margin:3px 0 6px}.imprint-linear{display:grid;gap:9px;margin:14px 0}.imprint-row{display:grid;grid-template-columns:76px 1fr 100px;gap:8px;align-items:center;font-size:11px;color:#d9e5ec}.imprint-track{height:12px;border-radius:20px;background:linear-gradient(90deg,#39a9e8 0%,#39a9e8 49.8%,#e65d67 50.2%,#e65d67 100%);position:relative;border:1px solid #7890a0}.imprint-marker{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;border:2px solid white;background:#f5d49b;transform:translate(-50%,-50%);box-shadow:0 0 8px #f5d49b}.imprint-row b{color:#f1d4a3;font-weight:600}.imprint-ends{display:flex;justify-content:space-between;color:#91a9b9;font-size:10px;margin-left:84px}
 
-@media(min-width:600px){.app{padding-left:24px;padding-right:24px}.wheel{width:390px}.miniwheels{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:600px){.app{padding-left:24px;padding-right:24px}.wheel{width:100%;max-width:520px}.miniwheels{grid-template-columns:repeat(5,1fr)}}
 .cycle-date-readout{margin:12px auto 2px;max-width:520px;padding:10px 12px;border:1px solid #28485d;border-radius:12px;background:rgba(7,24,38,.72);color:#d9e7ef;font-size:12px;line-height:1.55;text-align:left}.cycle-date-readout strong{color:#f5d49b}.cycle-date-readout .muted{color:#91a9b9}.cycle-date-readout .entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-top:7px}.cycle-date-readout .entry{border-bottom:1px solid rgba(130,165,185,.16);padding:3px 0}.cycle-date-readout .entry b{color:#f2d49f;font-weight:650}
 .home-screen{padding:18px 2px 28px}.home-hero{border:1px solid #715b40;border-radius:18px;background:linear-gradient(155deg,#102b40,#071725);padding:22px 17px;text-align:center;margin:12px 0 18px}.home-hero h2{font:500 25px Georgia,serif;color:#f3d6a4;margin:0 0 9px}.home-hero p{color:#c5d3dd;font-size:13px;line-height:1.65;margin:7px auto;max-width:590px}.home-section{border:1px solid var(--line);border-radius:13px;background:#0b2031;margin:10px 0;overflow:hidden}.home-section summary{padding:14px;color:#f0d5a8;cursor:pointer;font-size:14px}.home-section .explain-body{padding:0 14px 15px}
 #reclaimAbout .kali-theory-section{border-color:#57445c;background:linear-gradient(145deg,#101d2b,#21172b);margin:12px 0}
@@ -433,7 +433,7 @@ body[data-theme="kali"] #reclaimAbout .home-section[open]{
 .explore-algorithm-link{display:block;margin:18px auto 22px;max-width:360px;text-align:center}.death-wheel-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
 .death-wheel-item{min-width:0;background:var(--card,rgba(128,128,128,.08));border:1px solid var(--line,rgba(128,128,128,.2));border-radius:14px;padding:10px;text-align:center}
 .death-wheel-item h4{margin:0 0 8px;font-size:14px}
-.death-wheel-item svg{width:100%;height:auto;display:block}
+.death-wheel-item svg{width:100%;max-width:520px;aspect-ratio:1;height:auto;display:block;margin:0 auto}
 .death-imprint-diagram{margin:14px 0;padding:14px;border:1px solid var(--line,rgba(128,128,128,.2));border-radius:14px}
 @media(max-width:520px){.death-wheel-gallery{grid-template-columns:1fr}}
 .death-wheel-item{padding:14px}.death-wheel-item svg{max-width:430px;margin:0 auto}
@@ -758,16 +758,72 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="PATH OF TIME">
+<meta name="apple-mobile-web-app-title" content="KALA CHAKRA">
 <link rel="apple-touch-icon" href="./icons/icon-192.png">
 </head>
-<body data-theme="kala"><div class="app">
+<body data-theme="kala"><script>
+/* KALA CHAKRA shared personal-data layer.
+   Keeps legacy keys intact so existing calculations and saved records remain compatible. */
+(function(){
+ const memory=new Map();
+ const keys=["kalaChakraBirthImprint","kalaChakraDeathMoment","kalaChakraSahasraraDay"];
+ const api={
+  get(key){
+   try{const v=localStorage.getItem(key);if(v!==null){memory.set(key,v);return v;}}catch(e){}
+   return memory.has(key)?memory.get(key):null;
+  },
+  set(key,value){
+   const v=String(value);memory.set(key,v);
+   try{localStorage.setItem(key,v);return true;}catch(e){return false;}
+  },
+  all(){
+   const out={version:1,app:"KALA CHAKRA",exportedAt:new Date().toISOString(),data:{}};
+   keys.forEach(k=>{const v=api.get(k);if(v!==null)out.data[k]=v;});
+   return out;
+  },
+  import(obj){
+   if(!obj||obj.app!=="KALA CHAKRA"||!obj.data||typeof obj.data!=="object")throw new Error("This is not a KALA CHAKRA backup.");
+   keys.forEach(k=>{if(typeof obj.data[k]==="string")api.set(k,obj.data[k]);});
+  },
+  storageAvailable(){try{const k="__kc_test__";localStorage.setItem(k,"1");localStorage.removeItem(k);return true;}catch(e){return false;}}
+ };
+ window.KCData=api;
+ document.addEventListener("DOMContentLoaded",()=>{
+  const status=document.getElementById("kcDataStatus");
+  const say=t=>{if(status)status.textContent=t;};
+  if(!api.storageAvailable())say("This browser restricts local-file storage. Export your personal-data backup before closing; import it again when reopening the app.");
+  const exp=document.getElementById("kcExportData"),imp=document.getElementById("kcImportData"),file=document.getElementById("kcImportFile");
+  if(exp)exp.addEventListener("click",()=>{
+   const blob=new Blob([JSON.stringify(api.all(),null,2)],{type:"application/json"});
+   const url=URL.createObjectURL(blob),a=document.createElement("a");
+   a.href=url;a.download="kala-chakra-personal-backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
+   say("Personal-data backup exported. Keep this JSON file safe; it can restore your Birth and Death Moments on another device.");
+  });
+  if(imp&&file)imp.addEventListener("click",()=>file.click());
+  if(file)file.addEventListener("change",async()=>{
+   const f=file.files&&file.files[0];if(!f)return;
+   try{api.import(JSON.parse(await f.text()));say("Backup imported. Reloading the app to refresh all cycle readings.");setTimeout(()=>location.reload(),500);}
+   catch(e){say(e.message||"Could not import this backup.");}
+  });
+ });
+})();
+</script>
+<div class="app">
 <header><h1>PATH OF TIME</h1><p class="sub">Align and transform with the cycles of Time.</p></header>
+<section id="kcDataTools" style="margin:10px auto 14px;padding:10px 12px;border:1px solid #29445a;border-radius:12px;background:#0b2031;max-width:760px">
+ <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+  <strong style="font-size:13px;color:#e9bd78">Personal Data</strong>
+  <button type="button" id="kcExportData" style="padding:7px 10px;border-radius:8px">Export backup</button>
+  <button type="button" id="kcImportData" style="padding:7px 10px;border-radius:8px">Import backup</button>
+  <input type="file" id="kcImportFile" accept="application/json,.json" style="display:none">
+ </div>
+ <p id="kcDataStatus" style="font-size:11px;color:#a9bac8;margin:7px 0 0">Birth and Death Moment data are stored by this browser. Export a backup when using local HTML on mobile.</p>
+</section>
 <nav class="tabs" id="mainTabs">
 <button class="tab active" data-layer="nature">KALA<small>(Conscious Journey)</small></button><button class="tab" data-layer="reclaiming">KALI<small>(Transformative Journey)</small></button>
 </nav>
 <nav class="subtabs" id="natureSubtabs" style="display:flex">
-<button class="subtab active" data-tab="natureAbout">Theory</button><button class="subtab" data-tab="birth">Birth Moment</button><button class="subtab" data-tab="weather">Energy Weather</button>
+<button class="subtab active" data-tab="natureAbout">Theory</button><button class="subtab" data-tab="birth">Birth Moment</button><button class="subtab" data-tab="weather">Current Energy Weather</button>
 </nav>
 <nav class="subtabs" id="reclaimSubtabs" style="display:none">
 <button class="subtab active" data-tab="reclaimAbout">Theory</button><button class="subtab" data-tab="death">Death Moment</button><button class="subtab" data-tab="algorithm">Transformation Algorithm</button>
@@ -826,7 +882,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <p>The journey is not complete when consciousness reaches its highest point. It is complete when what has been realised can be embodied in the world. As the circuit completes, all seven centres shine together as one unified field of Chaitanya — living, awakened consciousness.</p></div></details></section>
 
 <section id="weather" class="view">
-<div class="kicker">CURRENT UNIVERSAL CONFIGURATION</div><h2 class="headline">Energy Weather</h2><p class="description" id="today">The living pattern of the current time cycles</p>
+<div class="kicker">CURRENT UNIVERSAL CONFIGURATION</div><h2 class="headline">Current Energy Weather</h2><p class="description" id="today">The living pattern of the current time cycles</p>
 <div class="cycle-tabs weather-tabs">
 <button class="cycle-chip active" data-weather-tab="daily">Day</button><button class="cycle-chip" data-weather-tab="lunar">Month</button><button class="cycle-chip" data-weather-tab="yearly">Year</button><button class="cycle-chip" data-weather-tab="jupiter">Jupiter</button><button class="cycle-chip" data-weather-tab="saturn">Saturn</button><button class="cycle-chip week-chip" data-weather-tab="week">Week</button><button class="cycle-chip" data-weather-tab="reading">Daily Energy Reading</button>
 </div>
@@ -964,15 +1020,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <summary>3 · The Transformation Algorithm — Compression Through Cycles</summary>
 <div class="explain-body kali-theory-body">
 <p>Your previous life becomes the arms of the vortex. Its lived years, experiences, identities and accumulated impressions are drawn inward, gathered and compressed through successive cycles of Time.</p>
-<details class="home-section kali-theory-section compression-expandable existential-madness">
- <summary>1. The Existential Madness</summary>
- <div class="explain-body">
-  <p>The madness arises because compression happens both sequentially and in parallel.</p>
-  <p>At any moment, a person is being bombarded by all seven (or more) cycles of Time. Shorter cycles are created through the compression of larger cycles, while the larger cycles themselves are shaped by the repackaging of entangled karmic events from previous lives.</p>
-  <p>These karmic knots repeat over and over, appearing through different people, relationships and circumstances. The same energy graph keeps presenting itself in new forms.</p>
-  <p>The repetition continues until the person begins to see the nature of the pattern, becomes conscious of it, and makes a deliberate choice not to travel through that same energy graph again and again.</p>
- </div>
-</details>
+
 
 <h4>First compression · Saturn cycle into Jupiter cycle</h4>
 <p><strong>Approximately 30 years → 12 years</strong></p>
@@ -1011,8 +1059,19 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 </div>
 </details>
 
+<details class="home-section kali-theory-section compression-expandable existential-madness">
+ <summary>4. The Existential Madness</summary>
+ <div class="explain-body">
+  <p>The madness arises because compression happens both sequentially and cyclically.</p>
+  <p>At any moment, a person is being bombarded by all seven (or more) cycles of Time. Shorter cycles are created through the compression of larger cycles, while the larger cycles themselves are shaped by the repackaging of entangled karmic events from previous lives.</p>
+  <p>Initially, because of cyclical compression, the entire life energy graph of, say, 30 years cannot fit into shorter cycles like a day, and there will be striving. As sequential compression progresses over years, shorter cycles also reach completion.</p>
+  <p>These karmic knots repeat over and over, appearing through different people, relationships and circumstances. The same energy graph keeps presenting itself in new forms.</p>
+  <p>The repetition continues until the person begins to see the nature of the pattern, becomes conscious of it, and makes a deliberate choice not to travel through that same energy graph again and again.</p>
+ </div>
+</details>
+
 <details class="home-section kali-theory-section">
-<summary>4 · Enlightened Beings — Breakthrough, Purification and Integration</summary>
+<summary>5 · Enlightened Beings — Breakthrough, Purification and Integration</summary>
 <div class="explain-body kali-theory-body">
 <p>The table below separates the first decisive breakthrough or turning point from the subsequent period of practice, purification, stabilisation or emergence into teaching. Ages and durations are approximate; traditional biographies sometimes differ.</p>
 <div class="table-wrap enlightened-table-wrap">
@@ -1046,7 +1105,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 </div>
 </details>
 <details class="home-section kali-theory-section">
-<summary>5 · Nature of Methods Evolved Based on Rupture in Saturn Phases</summary>
+<summary>6 · Nature of Methods Evolved Based on Rupture in Saturn Phases</summary>
 <div class="explain-body kali-theory-body">
 <div class="turning-point-examples">
   <h3>Lives at the Turning Point</h3>
@@ -1087,7 +1146,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 
 
 <details class="home-section kali-theory-section">
-<summary>5 · KALI — The Transformative Journey</summary>
+<summary>7 · KALI — The Transformative Journey</summary>
 <div class="explain-body kali-theory-body">
 <p><strong>Somehow, the body has survived the death of the mind!</strong></p>
 <p>And now Nature thinks this person is dead. She begins the process of reclaiming the space. If we can allow her to do that, we can establish ourselves as the dead — no longer holding on to the old identity, no longer resisting the process of reclamation.</p>
@@ -1167,8 +1226,8 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
   <summary>2nd Compression: 12 years (Jupiter) → 1 year (Earth)</summary>
   <div class="explain-body">
     <p>The complete 12-year Jupiter cycle is compressed into one Earth year. Each lunar cycle within this year carries one successive Jupiter year.</p>
-    <p>The personal Earth-year window begins at the starting boundary generated by the first compression. The natural yearly chakra sequence is preserved; the personal algorithm does not reset it.</p>
-    <p>If an Adhika Masa occurs, it extends the corresponding chakra state rather than creating an additional state.</p>
+    <p>The personal Earth-year window begins at the starting boundary generated by the first compression and runs for one complete Earth year. The natural yearly chakra sequence is preserved; the personal algorithm does not reset it.</p>
+    <p>If an Adhika Masa occurs, it and the following Nija Masa share the corresponding chakra state. The extra lunar interval extends that state rather than creating a thirteenth state.</p>
     <div class="table-wrap"><table class="chakra-table timeline-table">
       <thead><tr><th>Lunar cycle</th><th>Lunar boundary</th><th>Chakra state</th><th>Represents</th></tr></thead>
       <tbody id="secondCompressionRows"><tr><td colspan="4">Enter a Death Moment to generate this timeline.</td></tr></tbody>
@@ -1363,7 +1422,7 @@ function fmtDate(iso,withYear=false){return new Date(iso).toLocaleDateString("en
 function fmtTime(iso){return new Date(iso).toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"});}
 function polar(coord,r){const a=coord/30*Math.PI*2;return {x:250-r*Math.sin(a),y:250+r*Math.cos(a)};}
 function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
- const svg=document.getElementById(svgId);svg.classList.add("lunar-wheel");svg.setAttribute("viewBox","-38 -24 576 548");
+ const svg=document.getElementById(svgId);svg.classList.add("lunar-wheel");svg.setAttribute("viewBox","-100 -24 700 548");
  let h=`<defs><radialGradient id="lunarBg"><stop stop-color="#18384e"/><stop offset="1" stop-color="#071725"/></radialGradient><filter id="moonGlow"><feGaussianBlur stdDeviation="5"/></filter><clipPath id="moonClip"><circle cx="250" cy="250" r="43"/></clipPath></defs>`;
  h+=`<circle cx="250" cy="250" r="222" fill="none" stroke="#7890a0" stroke-width="1.3"/><circle cx="250" cy="250" r="185" fill="none" stroke="#29485c" stroke-width="1"/>`;
  // Ascending and descending arcs, following the hand-drawn orientation.
@@ -1376,10 +1435,13 @@ function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
  for(let i=0;i<12;i++){
   const coord=i*2.5,p=polar(coord,222),c=chakraColors[i===6?6:(i<6?i:12-i)];
   h+=`<circle cx="${p.x}" cy="${p.y}" r="6.5" fill="${c}" stroke="#fff" stroke-width="1.2"/><circle cx="${p.x}" cy="${p.y}" r="10" fill="none" stroke="${c}" opacity=".35"/>`;
-  const lab=polar(coord,242),anchor=lab.x<190?"end":(lab.x>310?"start":"middle");
-  h+=`<text x="${lab.x}" y="${lab.y-4}" fill="#f3d6a4" font-size="10" font-weight="600" text-anchor="${anchor}">${lunarStateNames[i]}</text><text x="${lab.x}" y="${lab.y+9}" fill="#c9d8e2" font-size="8" text-anchor="${anchor}">(${lunarStateDirections[i]})</text>`;
+  let lab=polar(coord,258),anchor=lab.x<190?"end":(lab.x>310?"start":"middle");
+  const stateIndex=i;
+  const lunarMain=stateIndex===6?"Sahasrara":`${stateIndex<6?"Asc":"Desc"} ${["Muladhara","Swadishtana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadishtana"][stateIndex]}`;
+  const lunarMarker=`Tithi ${Math.round(i*2.5)}`;
+  h+=`<text x="${lab.x}" y="${lab.y-4}" fill="#f3d6a4" font-size="8.5" font-weight="600" text-anchor="${anchor}">${lunarMain}</text><text x="${lab.x}" y="${lab.y+9}" fill="#c9d8e2" font-size="7.5" text-anchor="${anchor}">(${lunarMarker})</text>`;
  }
- const pos=overridePos===null?lunarCoordinate(now):overridePos,tip=polar(pos,148),base=polar(pos,162);h+=`<line x1="250" y1="250" x2="${base.x}" y2="${base.y}" stroke="#ffe2a8" stroke-width="4" stroke-linecap="round"/><polygon points="${tip.x},${tip.y} ${base.x-5},${base.y+3} ${base.x+5},${base.y-3}" fill="#ffe2a8"/><circle cx="250" cy="250" r="49" fill="#0a1b2a" stroke="#b7cbd8" stroke-width="1.2"/>`;
+ const pos=overridePos===null?lunarCoordinate(now):overridePos,tip=polar(pos,162),base=polar(pos,148);h+=`<line x1="250" y1="250" x2="${base.x}" y2="${base.y}" stroke="#ffe2a8" stroke-width="4" stroke-linecap="round"/><polygon points="${tip.x},${tip.y} ${base.x-5},${base.y+3} ${base.x+5},${base.y-3}" fill="#ffe2a8"/><circle cx="250" cy="250" r="49" fill="#0a1b2a" stroke="#b7cbd8" stroke-width="1.2"/>`;
  // A simple phase disc: lit fraction grows to full at tithi 15, then shrinks.
  const phase=pos/30,illum=(1-Math.cos(2*Math.PI*phase))/2, waxing=pos<=15;
  h+=`<g clip-path="url(#moonClip)"><circle cx="250" cy="250" r="43" fill="#d9e3e8"/><path d="M250 207 A43 43 0 0 ${waxing?1:0} 250 293 A${Math.max(1,43*Math.abs(1-2*illum))} 43 0 0 ${waxing?0:1} 250 207 Z" fill="#14283a"/></g><circle cx="250" cy="250" r="43" fill="none" stroke="#fff" stroke-width="1.2"/><text x="250" y="310" fill="#e6d1ad" font-size="10" text-anchor="middle">${pos.toFixed(2)} / 30</text>`;
@@ -1395,21 +1457,56 @@ function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
 function drawWheel(id,progress,labels,exactLocalTime=null){
  const svg=document.getElementById(id),p=Math.max(0,Math.min(.9999,progress));
  const isDaily=window.activeCycle==="daily",cx=250,cy=250,R=222;
- svg.setAttribute("viewBox","-38 -24 576 548");
- const names=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ascending Ajna","Sahasrara","Descending Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
+ svg.setAttribute("viewBox","-100 -24 700 548");
+ const names=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
  let html=`<defs><radialGradient id="cycleDisc"><stop stop-color="#18384e"/><stop offset="1" stop-color="#071725"/></radialGradient><filter id="cycleGlow"><feGaussianBlur stdDeviation="5"/></filter><clipPath id="solarClip"><circle cx="${cx}" cy="${cy}" r="43"/></clipPath></defs>`;
  html+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#7890a0" stroke-width="1.3"/><circle cx="${cx}" cy="${cy}" r="185" fill="none" stroke="#29485c" stroke-width="1"/>`;
  html+=`<path d="M${cx} ${cy+R} A${R} ${R} 0 0 0 ${cx} ${cy-R}" fill="none" stroke="#39a9e8" stroke-width="4"/><path d="M${cx} ${cy-R} A${R} ${R} 0 0 1 ${cx} ${cy+R}" fill="none" stroke="#e65d67" stroke-width="4"/>`;
  for(let t=0;t<=12;t++){
-  const a=t/12*Math.PI*2,pt={x:cx-R*Math.sin(a),y:cy+R*Math.cos(a)},q={x:cx-(t%1===0?R-12:R-7)*Math.sin(a),y:cy+(t%1===0?R-12:R-7)*Math.cos(a)};
+  const a=t/12*Math.PI*2,pt={x:cx-R*Math.sin(a),y:cy+R*Math.cos(a)},q={x:cx-(R-12)*Math.sin(a),y:cy+(R-12)*Math.cos(a)};
   html+=`<line x1="${pt.x}" y1="${pt.y}" x2="${q.x}" y2="${q.y}" stroke="#c2d0d9" stroke-width="1.3" opacity=".8"/>`;
  }
+ const wheelId=id.toLowerCase();
+ const cycleKind=(wheelId.includes("saturn")||window.selectedWeatherCycle==="saturn")?"saturn":
+   ((wheelId.includes("jupiter")||window.selectedWeatherCycle==="jupiter")?"jupiter":
+   (wheelId.includes("month")||wheelId.includes("lunar")||window.selectedWeatherCycle==="lunar"?"lunar":
+   (wheelId.includes("year")||wheelId.includes("theoryyear")||window.selectedWeatherCycle==="yearly"?"year":
+   (wheelId.includes("day")||isDaily?"day":"year"))));
+ const dialCount=cycleKind==="day"?24:cycleKind==="saturn"?30:cycleKind==="lunar"?30:12;
+ for(let mark=0;mark<=dialCount;mark++){
+  const a=mark/dialCount*Math.PI*2;
+  const x1=cx-202*Math.sin(a),y1=cy+202*Math.cos(a);
+  const major=mark%(Math.max(1,dialCount/12))===0;
+  const x2=cx-(major?190:195)*Math.sin(a),y2=cy+(major?190:195)*Math.cos(a);
+  html+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c2d0d9" stroke-width="${major?1.5:.8}" opacity=".8"/>`;
+  const n={x:cx-174*Math.sin(a),y:cy+174*Math.cos(a)};
+  html+=`<text x="${n.x}" y="${n.y+4}" fill="#e2eaf0" font-size="${dialCount===30?8:9}" text-anchor="middle">${mark}</text>`;
+ }
+ const stateNames=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
  for(let i=0;i<12;i++){
-  const a=i/12*Math.PI*2,pt={x:cx-R*Math.sin(a),y:cy+R*Math.cos(a)},lab={x:cx-250*Math.sin(a),y:cy+250*Math.cos(a)};
+  const a=i/12*Math.PI*2,pt={x:cx-R*Math.sin(a),y:cy+R*Math.cos(a)};
   const col=chakraColors[i<=6?i:12-i];
-  const main=names[i],sub=(labels&&labels[i])?labels[i]:(isDaily?labels[i]:`Cycle ${i===0?12:i}`);
-  const anchor=lab.x<cx-35?"end":lab.x>cx+35?"start":"middle";
-  html+=`<circle cx="${pt.x}" cy="${pt.y}" r="6.5" fill="${col}" stroke="#fff" stroke-width="1.2"/><text x="${lab.x}" y="${lab.y-3}" fill="#f3d6a4" font-size="10" font-weight="600" text-anchor="${anchor}">${main}</text><text x="${lab.x}" y="${lab.y+10}" fill="#c9d8e2" font-size="8.5" text-anchor="${anchor}">(${sub})</text>`;
+  const stateIndex=i;
+  const direction=stateIndex<6?"Asc":(stateIndex===6?"":"Desc");
+  const main=stateIndex===6?"Sahasrara":`${direction} ${stateNames[stateIndex]==="Swadhisthana"?"Swadishtana":stateNames[stateIndex]}`;
+  // Each outer chakra-state label reads the matching position on the existing inner cycle.
+  let marker="";
+  if(cycleKind==="day"){
+   const hour=(6+i*2)%24, h12=hour%12||12, suffix=hour<12?"AM":"PM";
+   marker=`${h12}${suffix}`;
+  }else if(cycleKind==="lunar"){
+   marker=`Tithi ${Math.round(i*2.5)}`;
+  }else if(cycleKind==="saturn"){
+   const value=i*2.5;
+   marker=`Year ${Number.isInteger(value)?value:value.toFixed(1)}`;
+  }else if(cycleKind==="jupiter"){
+   marker=`Year ${i}`;
+  }else{
+   marker=`Lunar cycle ${i}`;
+  }
+  let lx=cx-258*Math.sin(a),ly=cy+258*Math.cos(a);
+  let anchor=lx<cx-35?"end":lx>cx+35?"start":"middle";
+  html+=`<circle cx="${pt.x}" cy="${pt.y}" r="6.5" fill="${col}" stroke="#fff" stroke-width="1.2"/><text x="${lx}" y="${ly-3}" fill="#f3d6a4" font-size="8.5" font-weight="600" text-anchor="${anchor}">${main}</text><text x="${lx}" y="${ly+9}" fill="#c9d8e2" font-size="7.5" text-anchor="${anchor}">(${marker})</text>`;
  }
  // Centre solar phase: a softly animated sun with a moving terminator-like shadow.
  const phase=isDaily?((p+0.25)%1):p,lit=(1-Math.cos(2*Math.PI*phase))/2,shadow=Math.max(2,43*Math.abs(1-2*lit)),wax=lit<.5;
@@ -1418,23 +1515,29 @@ function drawWheel(id,progress,labels,exactLocalTime=null){
  html+=`<line x1="${cx}" y1="${cy}" x2="${bx}" y2="${by}" stroke="#ffe2a8" stroke-width="4" stroke-linecap="round"/><polygon points="${x},${y} ${bx+px},${by+py} ${bx-px},${by-py}" fill="#ffe2a8" stroke="#fff3d7" stroke-width="1"/>`;
  const wheelIndex=Math.min(11,Math.floor(p*12));
  const wheelNames=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
- const wheelNextNames=["Swadhisthana","Manipura","Anahata","Vishuddha","Ascending Ajna","Sahasrara","Descending Ajna","Vishuddha","Anahata","Manipura","Swadhisthana","Muladhara"];
  const wheelDirection=wheelIndex<6?"Ascending":(wheelIndex===6?"Turning point":"Descending");
- let wheelMeta=(labels&&labels[wheelIndex])?labels[wheelIndex]:"";
- const wheelId=id.toLowerCase();
- if(isDaily) wheelMeta=exactLocalTime || new Date().toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit",hour12:true});
- if(wheelId.includes("deathday")) wheelMeta=new Date(window.lastDeathMoment||Date.now()).toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit",hour12:true});
- else if(wheelId.includes("deathyear")||wheelId.includes("yearly")||window.selectedWeatherCycle==="yearly") wheelMeta=`Cycle ${wheelIndex+1}`;
- else if(wheelId.includes("deathjupiter")||wheelId.includes("jupiter")||window.selectedWeatherCycle==="jupiter") wheelMeta=`Jupiter year ${wheelIndex+1}`;
- else if(wheelId.includes("deathsaturn")||wheelId.includes("saturn")||window.selectedWeatherCycle==="saturn") wheelMeta=`Saturn year ${wheelIndex+1}`;
- else if(wheelId.includes("birth") && !isDaily) wheelMeta=wheelMeta||`Period ${wheelIndex+1}`;
- html+=`<text x="${cx}" y="132" fill="#ffe0ad" font-size="16" font-weight="800" text-anchor="middle">${wheelDirection}</text><text x="${cx}" y="153" fill="#e1edf5" font-size="12.5" font-weight="600" text-anchor="middle">${wheelNames[wheelIndex]} to ${wheelNextNames[wheelIndex]}</text><text x="${cx}" y="173" fill="#e1edf5" font-size="12" font-weight="600" text-anchor="middle">${wheelMeta}</text>`;
+ let wheelMeta="";
+ if(cycleKind==="day"){
+  const hour=(8+wheelIndex*2)%24,h12=hour%12||12;
+  wheelMeta=`${h12}${hour<12?"AM":"PM"}`;
+ }else if(cycleKind==="lunar"){
+  wheelMeta=`Tithi ${Math.min(30,Math.round((wheelIndex+1)*2.5))}`;
+ }else if(cycleKind==="saturn"){
+  const val=wheelIndex===0?2.5:wheelIndex*2.5;
+  wheelMeta=`Year ${Number.isInteger(val)?val:val.toFixed(1)}`;
+ }else if(cycleKind==="jupiter"){
+  wheelMeta=`Year ${wheelIndex+1}`;
+ }else{
+  wheelMeta=`Lunar cycle ${wheelIndex+1}`;
+ }
+ const centerState=wheelIndex===6?"Sahasrara":`${wheelIndex<6?"Ascending":"Descending"} ${wheelNames[wheelIndex]}`;
+ html+=`<text x="${cx}" y="132" fill="#ffe0ad" font-size="16" font-weight="800" text-anchor="middle">${wheelDirection}</text><text x="${cx}" y="153" fill="#e1edf5" font-size="12.5" font-weight="600" text-anchor="middle">${centerState}</text><text x="${cx}" y="173" fill="#e1edf5" font-size="12" font-weight="600" text-anchor="middle">${wheelMeta}</text>`;
  svg.innerHTML=html;
 }
 
 
 function safeLocalGet(key,fallback=null){
- try{const value=localStorage.getItem(key);return value===null?fallback:value;}
+ try{const value=KCData.get(key);return value===null?fallback:value;}
  catch(e){return fallback;}
 }
 
@@ -1453,7 +1556,7 @@ function renderDailyWeatherReading(){
  const weekChakra=chakraNamesWeek[(weekOffset+6)%7];
  const weekState={chakra:weekChakra,direction:weekOffset===0?'Turning point':'Ascending'};
  let birthRecord=null;
- try{birthRecord=JSON.parse(localStorage.getItem('kalaChakraBirthImprint')||'null');}catch(e){}
+ try{birthRecord=JSON.parse(KCData.get('kalaChakraBirthImprint')||'null');}catch(e){}
  let jupiter=null,saturn=null,longCycleNote='';
  if(birthRecord&&birthRecord.date&&birthRecord.time){
   try{
@@ -1516,7 +1619,7 @@ function renderDailyWeatherReading(){
 function updateLongCycleWeather(kind){
  const now=new Date();
  let record=null;
- try{record=JSON.parse(localStorage.getItem("kalaChakraBirthImprint")||"null");}catch(e){}
+ try{record=JSON.parse(KCData.get("kalaChakraBirthImprint")||"null");}catch(e){}
  const title=kind==="jupiter"?"Jupiter 12-year cycle":"Saturn 30-year cycle";
  document.getElementById("weatherWheel").classList.remove("lunar-wheel");
  document.getElementById("weatherWheel").setAttribute("viewBox","-38 -24 576 548");
@@ -1669,6 +1772,10 @@ function showApp(tab="natureAbout"){
  document.querySelectorAll(".subtab").forEach(x=>x.classList.toggle("active",x.dataset.tab===tab));
  document.querySelectorAll(".view").forEach(x=>x.classList.toggle("active",x.id===tab));
  if(tab==="weather")updateWeather();
+ if(tab==="algorithm"){
+  let savedDeath=null;try{savedDeath=JSON.parse(KCData.get("kalaChakraDeathMoment")||"null");}catch(e){}
+  updateAlgorithmPersonal(savedDeath);
+ }
 }
 document.querySelectorAll(".tab[data-layer]").forEach(b=>b.addEventListener("click",()=>{
  activeLayer=b.dataset.layer;
@@ -1687,7 +1794,7 @@ document.querySelectorAll(".weather-tabs .cycle-chip").forEach(b=>b.addEventList
  if(week){updateWeekWeather();}else if(!reading){selected=b.dataset.weatherTab;updateWeather();}else{renderDailyWeatherReading();}
 }));
 document.getElementById('sahasraraDay').addEventListener('change',e=>{
- localStorage.setItem('kalaChakraSahasraraDay',e.target.value);
+ KCData.set('kalaChakraSahasraraDay',e.target.value);
  renderWeekMapping();
 });
 document.getElementById("legend").innerHTML=chakraNames.map((n,i)=>`<span class="key"><i class="dot" style="background:${chakraColors[i]}"></i>${n}</span>`).join("");
@@ -1708,6 +1815,26 @@ function solarLongitude(date){
  const r=x=>x*Math.PI/180;
  const C=(1.914602-0.004817*T-0.000014*T*T)*Math.sin(r(M)+(0))+(0.019993-0.000101*T)*Math.sin(2*r(M))+0.000289*Math.sin(3*r(M));
  return norm360(L0+C);
+}
+function lahiriAyanamsa(date){
+ // Lahiri/Chitrapaksha ayanamsa, referred to J2000.0.
+ // J2000 value: 23°51′25.532″; secular rate: 50.290966″ per tropical year.
+ const years=(julianDay(date)-2451545.0)/365.2425;
+ const j2000=23 + 51/60 + 25.532/3600;
+ return j2000 + years*(50.290966/3600);
+}
+function siderealSolarLongitude(date){
+ return norm360(solarLongitude(date)-lahiriAyanamsa(date));
+}
+function isAdhikaLunarInterval(start,end){
+ // An Amanta lunar month is Adhika when no sidereal solar-sign ingress
+ // (Sankranti) occurs between its bounding New Moons.
+ // Sample just inside both boundaries to avoid classifying an ingress
+ // coincident with a New Moon boundary as belonging to the wrong month.
+ const insideStart=new Date(start.getTime()+1000);
+ const insideEnd=new Date(end.getTime()-1000);
+ return Math.floor(siderealSolarLongitude(insideStart)/30)===
+        Math.floor(siderealSolarLongitude(insideEnd)/30);
 }
 function nextNewMoon(after){
  // Find the next 0° Moon–Sun elongation crossing strictly after 'after'.
@@ -1878,7 +2005,10 @@ function calcBirthImprint(){
  document.getElementById('birthCycleDiagram').innerHTML='';
  document.getElementById('birthImprintText').innerHTML=`<h3>Five starting points, one birth imprint</h3><p>The Day, Lunar and Year rows record the natural-cycle positions at the exact moment of birth. Jupiter and Saturn are added as personal long-cycle starting points: both begin at <strong>Muladhara · Turning point</strong>, and their wheels in Energy Weather show how those cycles progress with age.</p><p><strong>The imprint is a snapshot, not a reset.</strong> The natural cycles continue independently.</p>`;
  document.getElementById('birthResults').style.display='block';setBirthPage('day');status.textContent='Birth configuration calculated. Use the three tabs to explore the natural cycles.';
- const record={date:dateStr,time:timeStr,place,zone};try{localStorage.setItem('kalaChakraBirthImprint',JSON.stringify(record));}catch(e){}
+ const record={date:dateStr,time:timeStr,place,zone};try{KCData.set('kalaChakraBirthImprint',JSON.stringify(record));}catch(e){}
+ // Refresh the personal Transformation Algorithm immediately after saving Birth Moment.
+ let savedDeath=null;try{savedDeath=JSON.parse(KCData.get('kalaChakraDeathMoment')||'null');}catch(e){}
+ updateAlgorithmPersonal(savedDeath);
  renderEnergyAlignment();
 }
 
@@ -1914,7 +2044,7 @@ function renderEnergyAlignment(){
  }).join('');
 }
 document.getElementById('saveBirth').addEventListener('click',calcBirthImprint);
-try{const saved=JSON.parse(localStorage.getItem('kalaChakraBirthImprint')||'null');if(saved){document.getElementById('birthDate').value=saved.date||'';document.getElementById('birthTime').value=saved.time||'';document.getElementById('birthPlace').value=saved.place||'';document.getElementById('birthZone').value=saved.zone||'Asia/Kolkata';}}catch(e){}
+try{const saved=JSON.parse(KCData.get('kalaChakraBirthImprint')||'null');if(saved){document.getElementById('birthDate').value=saved.date||'';document.getElementById('birthTime').value=saved.time||'';document.getElementById('birthPlace').value=saved.place||'';document.getElementById('birthZone').value=saved.zone||'Asia/Kolkata';}}catch(e){}
 
 let startX=0,startY=0;const wheel=document.querySelector(".wheel-card");
 wheel.addEventListener("touchstart",e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY},{passive:true});
@@ -1999,27 +2129,41 @@ function renderSecondCompression(saved){
  // the exact starting boundary for the second compression.
  const firstCompressionStart=nextAnnualKcAnchor(moment);
  const start=annualBoundaryAfter(firstCompressionStart,12);
- const end=annualBoundaryAfter(start,1);
+ // The second compression is one Earth year, not merely the next New Moon
+ // after the next February threshold. Keeping a true solar-year window lets
+ // the table include the 13th lunation when an Adhika Masa occurs.
+ const end=addKcYears(start,1);
  const intervals=lunarIntervalsForYear(start,end);
  const chakra=["Muladhara · ascending","Swadhisthana · ascending","Manipura · ascending","Anahata · ascending","Vishuddha · ascending","Ajna · ascending","Sahasrara · turning point","Ajna · descending","Vishuddha · descending","Anahata · descending","Manipura · descending","Swadhisthana · descending"];
  let jupiterYear=0;
+ let adhikaPendingNija=false;
  const rendered=intervals.map((interval,index)=>{
-  const mid=new Date((interval.start.getTime()+interval.end.getTime())/2);
-  const intervalEndSample=new Date(interval.end.getTime()-1000);
-  const sameSolarSign=Math.floor(solarLongitude(interval.start)/30)===Math.floor(solarLongitude(intervalEndSample)/30);
-  const adhika=sameSolarSign;
-  const stateIndex=adhika?Math.min(jupiterYear,11):Math.min(jupiterYear,11);
+  const adhika=isAdhikaLunarInterval(interval.start,interval.end);
+  const stateIndex=Math.min(jupiterYear,11);
   const state=chakra[stateIndex];
-  const label=adhika?`${jupiterYear+1} · Adhika`:`${++jupiterYear}`;
-  const represents=adhika?`Jupiter year ${stateIndex+1} · extended`:`Jupiter year ${jupiterYear}`;
+  let label,represents;
+  if(adhika){
+   label=`${stateIndex+1} · Adhika`;
+   represents=`Jupiter year ${stateIndex+1} · extended`;
+   adhikaPendingNija=true;
+  }else if(adhikaPendingNija){
+   label=`${stateIndex+1} · Nija`;
+   represents=`Jupiter year ${stateIndex+1}`;
+   jupiterYear++;
+   adhikaPendingNija=false;
+  }else{
+   label=`${stateIndex+1}`;
+   represents=`Jupiter year ${stateIndex+1}`;
+   jupiterYear++;
+  }
   return `<tr><td>${label}</td><td>${formatKcDate(interval.start)} – ${formatKcDate(interval.end)}</td><td>${state}${adhika?" · extended":""}</td><td>${represents}</td></tr>`;
  });
  rows.innerHTML=rendered.join("");
- note.textContent=`Personal annual window: ${formatKcDate(start)} – ${formatKcDate(end)}. The second compression begins at the exact New Moon boundary ending the first compression's 12 annual intervals. ${intervals.length} lunar intervals fall within this window${intervals.length===13?"; the extra interval is treated as an Adhika extension of its corresponding state":""}.`;
+ note.textContent=`Personal Earth-year window: ${formatKcDate(start)} – ${formatKcDate(end)}. The second compression spans one complete Earth year from the first compression's 12-year endpoint. ${intervals.length} lunar intervals fall within this window${intervals.some(x=>isAdhikaLunarInterval(x.start,x.end))?"; Adhika and its following Nija interval share one chakra state, preserving the twelve-state sequence":""}.`;
 }
 function updateAlgorithmPersonal(saved){
  let birthRecord=null;
- try{birthRecord=JSON.parse(localStorage.getItem("kalaChakraBirthImprint")||"null");}catch(e){}
+ try{birthRecord=JSON.parse(KCData.get("kalaChakraBirthImprint")||"null");}catch(e){}
  const deathDate=saved?.date||"";
  const deathTime=saved?.time||"12:00";
  const deathMoment=deathDate?new Date(deathDate+"T"+deathTime+":00"):null;
@@ -2049,15 +2193,19 @@ document.getElementById("saveDeath").addEventListener("click",()=>{
  const moment=new Date(date+"T"+time+":00");
  if(Number.isNaN(moment.getTime())||moment>new Date()){status.textContent="Please enter a valid moment in the past.";return;}
  let birthRecord=null;
- try{birthRecord=JSON.parse(localStorage.getItem("kalaChakraBirthImprint")||"null");}catch(e){}
+ try{birthRecord=JSON.parse(KCData.get("kalaChakraBirthImprint")||"null");}catch(e){}
  if(birthRecord&&date<birthRecord.date){status.textContent="The Death Moment must be after the Birth Moment.";return;}
  const saved={date,time,type,note};
- try{localStorage.setItem("kalaChakraDeathMoment",JSON.stringify(saved));}catch(e){}
+ try{KCData.set("kalaChakraDeathMoment",JSON.stringify(saved));}catch(e){}
  const readable=new Intl.DateTimeFormat(undefined,{dateStyle:"long",timeStyle:"short"}).format(moment);
  updateAlgorithmPersonal(saved);
  const result=document.getElementById("deathResult");
  result.style.display="block";
- document.getElementById("deathResultSummary").innerHTML=`<p><strong>${readable}</strong>${type?` · ${type}`:""}</p><p>Your previous life is now recorded as the personal reference for the purification algorithm.</p>`;
+ const calendarAgeAtDeath=birthRecord&&birthRecord.date?calendarAgeBetween(birthRecord.date,date):null;
+ const ageLine=calendarAgeAtDeath
+  ? `<p><strong>Age at death moment:</strong> ${calendarAgeAtDeath.years} years, ${calendarAgeAtDeath.months} months, ${calendarAgeAtDeath.days} days</p>`
+  : `<p><strong>Age at death moment:</strong> Birth Moment not available. Complete your Birth Imprint to calculate this.</p>`;
+ document.getElementById("deathResultSummary").innerHTML=`<p><strong>${readable}</strong>${type?` · ${type}`:""}</p>${ageLine}<p>Your previous life is now recorded as the personal reference for the purification algorithm.</p>`;
 
  const gallery=document.getElementById("deathWheelGallery");
  gallery.innerHTML="";
@@ -2116,7 +2264,7 @@ document.getElementById("saveDeath").addEventListener("click",()=>{
  };
 });
 try{
- const saved=JSON.parse(localStorage.getItem("kalaChakraDeathMoment")||"null");
+ const saved=JSON.parse(KCData.get("kalaChakraDeathMoment")||"null");
  if(saved){
   document.getElementById("deathDate").value=saved.date||"";
   document.getElementById("deathTime").value=saved.time||"";
@@ -2161,9 +2309,11 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 
 <script>
+/* KALA CHAKRA PWA registration. The app remains usable if SW registration is unavailable. */
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js").catch(err => console.error("PWA service worker:", err));
+    navigator.serviceWorker.register("./sw.js", { scope: "./" })
+      .catch(error => console.warn("KALA CHAKRA offline support could not be registered:", error));
   });
 }
 </script>

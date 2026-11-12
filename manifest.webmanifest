@@ -1,14 +1,18 @@
 {
   "id": "./",
-  "name": "PATH OF TIME \u2014 Kala Chakra & Kali Spiral",
-  "short_name": "PATH OF TIME",
-  "description": "Explore the conscious and transformative journeys through cycles of time.",
+  "name": "KALA CHAKRA",
+  "short_name": "KALA CHAKRA",
+  "description": "Understand the changing energy of time through cycles of ascension and descension.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#061321",
   "theme_color": "#061321",
+  "categories": [
+    "lifestyle",
+    "education"
+  ],
   "icons": [
     {
       "src": "./icons/icon-192.png",
