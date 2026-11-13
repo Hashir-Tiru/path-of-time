@@ -1201,6 +1201,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <details class="home-section kali-theory-section compression-expandable">
   <summary>3rd Compression: 12 months (Earth year) → 1 month (Lunar)</summary>
   <div class="explain-body">
+    <p class="compression-date-range" id="compressionDateRange3">Enter a Death Moment to calculate this date range.</p>
     <p>The twelve months of the Earth year are compressed into one lunar month of 30 tithis. Each group of 2.5 tithis carries one month of the previous yearly cycle, preserving the twelve temporal states.</p>
   </div>
 </details>
@@ -1208,6 +1209,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <details class="home-section kali-theory-section compression-expandable">
   <summary>4th Compression: 1 lunar month → 1 day</summary>
   <div class="explain-body">
+    <p class="compression-date-range" id="compressionDateRange4">Enter a Death Moment to calculate this date range.</p>
     <p>One complete lunar month is compressed into one 24-hour day. The 30 tithis are carried by the 30 muhurtas of the day, with each muhurta representing one tithi.</p>
   </div>
 </details>
@@ -1215,6 +1217,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <details class="home-section kali-theory-section compression-expandable">
   <summary>5th Compression: 30 muhurtas (Day) → 1 muhurta (48 minutes)</summary>
   <div class="explain-body">
+    <p class="compression-date-range" id="compressionDateRange5">Enter a Death Moment to calculate this date range.</p>
     <p>The 30 muhurtas of the day are compressed into one muhurta of 48 minutes. The full daily cycle is now contained within this single temporal interval.</p>
   </div>
 </details>
@@ -1222,6 +1225,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <details class="home-section kali-theory-section compression-expandable">
   <summary>6th Compression: 1 muhurta (48 minutes) → 30 kalas (96 seconds each)</summary>
   <div class="explain-body">
+    <p class="compression-date-range" id="compressionDateRange6">Enter a Death Moment to calculate this date range.</p>
     <p>One muhurta of 48 minutes contains 30 kalas. Each kala is 96 seconds, carrying a further compression of the complete movement.</p>
   </div>
 </details>
@@ -1229,6 +1233,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <details class="home-section kali-theory-section compression-expandable">
   <summary>7th Compression: 1 kala (96 seconds) → 30 kashtas (3.2 seconds each)</summary>
   <div class="explain-body">
+    <p class="compression-date-range" id="compressionDateRange7">Enter a Death Moment to calculate this date range.</p>
     <p>One kala of 96 seconds contains 30 kashtas. Each kashta is 3.2 seconds.</p>
   </div>
 </details>
@@ -1384,7 +1389,7 @@ function fmtDate(iso,withYear=false){return new Date(iso).toLocaleDateString("en
 function fmtTime(iso){return new Date(iso).toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"});}
 function polar(coord,r){const a=coord/30*Math.PI*2;return {x:250-r*Math.sin(a),y:250+r*Math.cos(a)};}
 function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
- const svg=document.getElementById(svgId);svg.classList.add("lunar-wheel");svg.setAttribute("viewBox","-100 -24 700 548");
+ const svg=document.getElementById(svgId);svg.classList.add("lunar-wheel");svg.setAttribute("viewBox","-130 -92 760 684");
  let h=`<defs><radialGradient id="lunarBg"><stop stop-color="#18384e"/><stop offset="1" stop-color="#071725"/></radialGradient><filter id="moonGlow"><feGaussianBlur stdDeviation="5"/></filter><clipPath id="moonClip"><circle cx="250" cy="250" r="43"/></clipPath></defs>`;
  h+=`<circle cx="250" cy="250" r="222" fill="none" stroke="#7890a0" stroke-width="1.3"/><circle cx="250" cy="250" r="185" fill="none" stroke="#29485c" stroke-width="1"/>`;
  // Ascending and descending arcs, following the hand-drawn orientation.
@@ -1415,12 +1420,52 @@ function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
  const lunarMeta=`Tithi ${lunarTi}`;
  const lunarTransition=lunarState===6?"Sahasrara":`${lunarNames[lunarState]} to ${lunarNextNames[lunarState]}`;
  h+=`<text x="250" y="130" fill="#ffe0ad" font-size="20" font-weight="800" text-anchor="middle">${lunarDir}</text><text x="250" y="156" fill="#e1edf5" font-size="16" font-weight="700" text-anchor="middle">${lunarTransition}</text><text x="250" y="181" fill="#e1edf5" font-size="15" font-weight="700" text-anchor="middle">${lunarMeta}</text>`;
+ // Rahu/Ketu ecliptic-crossing overlay is intentionally limited to the Energy Weather lunar wheel.
+ // November–December 2026 true geocentric lunar ecliptic-node crossings, IST:
+ // Rahu (ascending) 17 Nov 2026 17:18:50 IST;
+ // Ketu (descending) 30 Nov 2026 09:03:36 IST;
+ // Next Rahu 14 Dec 2026 18:33:39 IST.
+ if(svgId==="weatherWheel"){
+  const rahuDate=new Date("2026-11-17T11:48:50Z");
+  const ketuDate=new Date("2026-11-30T03:33:36Z");
+  const ketuPos=Math.max(0,Math.min(30,lunarCoordinate(ketuDate)));
+  const rahuPos=Math.max(0,Math.min(30,lunarCoordinate(rahuDate)));
+  const annular=(a,b,fill)=>{
+   if(b<=a)return "";
+   const p1=polar(a,222),p2=polar(b,222),q2=polar(b,185),q1=polar(a,185);
+   const large=(b-a)>15?1:0;
+   return `<path d="M${p1.x} ${p1.y} A222 222 0 ${large} 1 ${p2.x} ${p2.y} L${q2.x} ${q2.y} A185 185 0 ${large} 0 ${q1.x} ${q1.y} Z" fill="${fill}" opacity=".62" stroke="none"/>`;
+  };
+  // Carry the ecliptic side continuously through Tithi 0. Cycle 9 begins
+  // after the previous Ketu crossing (3 Nov) and before this cycle's Rahu
+  // crossing (17 Nov), so the Moon is SOUTH at the cycle start.
+  // Grey: Tithi 0 → Rahu; yellow: Rahu → Ketu; grey: Ketu → cycle end.
+  let band="";
+  band+=annular(0,rahuPos,"#aeb8c4");
+  band+=annular(rahuPos,ketuPos,"#f5df86");
+  band+=annular(ketuPos,30,"#aeb8c4");
+  h+=band;
+  // Re-draw the inner/outer boundaries and tithi ticks above the translucent bands.
+  h+=`<circle cx="250" cy="250" r="222" fill="none" stroke="#b99a56" stroke-width="1.2"/><circle cx="250" cy="250" r="185" fill="none" stroke="#b99a56" stroke-width="1.1"/>`;
+  for(let t=0;t<=30;t++){
+   const a=polar(t,202),b=polar(t,(t%2===0?190:195));
+   h+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#c2d0d9" stroke-width="${t%2===0?1.5:.8}" opacity=".9"/>`;
+  }
+  for(let i=0;i<12;i++){
+   const pt=polar(i*2.5,222),c=chakraColors[i===6?6:(i<6?i:12-i)];
+   h+=`<circle cx="${pt.x}" cy="${pt.y}" r="6.5" fill="${c}" stroke="#fff" stroke-width="1.2"/><circle cx="${pt.x}" cy="${pt.y}" r="10" fill="none" stroke="${c}" opacity=".5"/>`;
+  }
+  // No separate crossing dots: the coloured arc boundaries already identify
+  // the Rahu/Ketu transitions. Keep the compact date legend clear of wheel markers.
+  // Position it further towards the upper-right corner of the lunar wheel.
+  h+=`<g font-family="Arial, sans-serif"><rect x="390" y="-69" width="13" height="10" rx="3" fill="#f5df86"/><text x="409" y="-60" fill="#e7d8bf" font-size="10.5">North · Rahu → Ketu</text><text x="409" y="-47" fill="#e7d8bf" font-size="9.5">Rahu: 17 Nov 2026</text><rect x="390" y="-32" width="13" height="10" rx="3" fill="#aeb8c4"/><text x="409" y="-23" fill="#e7d8bf" font-size="10.5">South · Ketu → Rahu</text><text x="409" y="-10" fill="#e7d8bf" font-size="9.5">Ketu: 30 Nov 2026</text></g>`;
+ }
  svg.innerHTML=h;
 }
 function drawWheel(id,progress,labels,exactLocalTime=null){
  const svg=document.getElementById(id),p=Math.max(0,Math.min(.9999,progress));
  const isDaily=window.activeCycle==="daily",cx=250,cy=250,R=222;
- svg.setAttribute("viewBox","-100 -24 700 548");
+ svg.setAttribute("viewBox","-100 -58 700 582");
  const names=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
  let html=`<defs><radialGradient id="cycleDisc"><stop stop-color="#18384e"/><stop offset="1" stop-color="#071725"/></radialGradient><filter id="cycleGlow"><feGaussianBlur stdDeviation="5"/></filter><clipPath id="solarClip"><circle cx="${cx}" cy="${cy}" r="43"/></clipPath></defs>`;
  html+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#7890a0" stroke-width="1.3"/><circle cx="${cx}" cy="${cy}" r="185" fill="none" stroke="#29485c" stroke-width="1"/>`;
@@ -1817,7 +1862,7 @@ document.getElementById("legend").innerHTML=chakraNames.map((n,i)=>`<span class=
 const balanceRows=document.getElementById("balanceRows"); if(balanceRows) balanceRows.innerHTML=chakraNames.map(n=>`<div class="balance-row"><span>${n}</span><span>—</span><span>Awaiting imprint</span></div>`).join("");
 // Birth Imprint engine — local-time input, astronomical phase approximations,
 // and the project's fixed 12-year / 30-year Jupiter and Saturn life cycles.
-const birthChakras=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ascending Ajna","Sahasrara","Descending Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
+const birthChakras=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
 function julianDay(date){return date.getTime()/86400000+2440587.5;}
 function norm360(x){return ((x%360)+360)%360;}
 function moonSunElongation(date){
@@ -1943,9 +1988,10 @@ function approximateYearlyStage(birth){
  return {stage:cyclePosition,cycle:stageNumber===0?12:stageNumber,anchor,quality:"Approximate post-Mahashivaratri new-moon anchor"};
 }
 function describeDeathConfiguration(stage){
- const idx=Math.max(0,Math.min(11,Math.floor(stage)%12));
+ const normalized=((Number(stage)%12)+12)%12;
+ const idx=Math.max(0,Math.min(11,Math.floor(normalized)));
  const chakra=birthChakras[idx];
- const direction=idx<6?"Ascending":(idx===6?"Turning point":"Descending");
+ const direction=(idx===0||idx===6)?"Turning point":(idx<6?"Ascending":"Descending");
  return `${direction} ${chakra}`;
 }
 function stageDescription(stage){
@@ -2177,6 +2223,46 @@ function renderSecondCompression(saved){
  rows.innerHTML=rendered.join("");
  note.textContent=`Personal Earth-year window: ${formatKcDate(start)} – ${formatKcDate(end)}. The second compression spans one complete Earth year from the first compression's 12-year endpoint. ${intervals.length} lunar intervals fall within this window${intervals.some(x=>isAdhikaLunarInterval(x.start,x.end))?"; Adhika and its following Nija interval share one chakra state, preserving the twelve-state sequence":""}.`;
 }
+function formatCompressionDateTime(date,zone){
+ return new Intl.DateTimeFormat("en-IN",{timeZone:zone,day:"numeric",month:"short",year:"numeric",hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true}).format(date);
+}
+function renderCompressionDateRanges(saved){
+ const ids=[3,4,5,6,7].map(n=>document.getElementById(`compressionDateRange${n}`));
+ if(ids.some(x=>!x))return;
+ if(!saved||!saved.date){
+  ids.forEach(x=>x.textContent="Enter a Death Moment to calculate this date range.");
+  return;
+ }
+ let birthRecord=null;
+ try{birthRecord=JSON.parse(KCData.get("kalaChakraBirthImprint")||"null");}catch(e){}
+ const zone=(birthRecord&&birthRecord.zone)||"Asia/Kolkata";
+ const deathMoment=new Date(saved.date+"T"+(saved.time||"12:00")+":00");
+ const firstStart=nextAnnualKcAnchor(deathMoment);
+ const secondStart=annualBoundaryAfter(firstStart,12);
+ const secondEnd=addKcYears(secondStart,1);
+ // Stage 3 begins at the second compression's exact annual-window endpoint,
+ // which is the lunar boundary for the personal timeline.
+ const stage3Start=new Date(secondEnd);
+ const stage3End=nextNewMoon(stage3Start);
+ // Stage 4 deliberately starts at 6:00 AM on the calendar day after
+ // the next New Moon, in the user's birth-time zone.
+ const endParts=new Intl.DateTimeFormat("en-CA",{timeZone:zone,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(stage3End);
+ const ep=Object.fromEntries(endParts.map(x=>[x.type,x.value]));
+ const nextDay=new Date(Date.UTC(Number(ep.year),Number(ep.month)-1,Number(ep.day)+1));
+ const y=nextDay.getUTCFullYear(),m=String(nextDay.getUTCMonth()+1).padStart(2,"0"),d=String(nextDay.getUTCDate()).padStart(2,"0");
+ const stage4Start=makeBirthDate(`${y}-${m}-${d}`,"06:00",zone);
+ const stage4End=new Date(stage4Start.getTime()+24*60*60*1000);
+ const stage5Start=stage4End;
+ const stage5End=new Date(stage5Start.getTime()+48*60*1000);
+ const stage6Start=stage5End;
+ const stage6End=new Date(stage6Start.getTime()+96*1000);
+ const stage7Start=stage6End;
+ const stage7End=new Date(stage7Start.getTime()+3.2*1000);
+ const ranges=[[stage3Start,stage3End],[stage4Start,stage4End],[stage5Start,stage5End],[stage6Start,stage6End],[stage7Start,stage7End]];
+ ranges.forEach(([a,b],i)=>{
+  ids[i].innerHTML=`<strong>Date range:</strong> ${formatCompressionDateTime(a,zone)} – ${formatCompressionDateTime(b,zone)}`;
+ });
+}
 function updateAlgorithmPersonal(saved){
  let birthRecord=null;
  try{birthRecord=JSON.parse(KCData.get("kalaChakraBirthImprint")||"null");}catch(e){}
@@ -2185,6 +2271,7 @@ function updateAlgorithmPersonal(saved){
  const deathMoment=deathDate?new Date(deathDate+"T"+deathTime+":00"):null;
  renderFirstCompression(saved);
  renderSecondCompression(saved);
+ renderCompressionDateRanges(saved);
  const readableDeath=deathMoment&&!Number.isNaN(deathMoment.getTime())?
   new Intl.DateTimeFormat(undefined,{dateStyle:"long",timeStyle:"short"}).format(deathMoment):"Not entered yet";
  document.getElementById("algorithmBirth").textContent=birthRecord?
