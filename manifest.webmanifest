@@ -1,30 +1,15 @@
 {
-  "id": "./",
   "name": "KALA CHAKRA",
   "short_name": "KALA CHAKRA",
-  "description": "Understand the changing energy of time through cycles of ascension and descension.",
+  "description": "Understand the changing energy of time.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#061321",
   "theme_color": "#061321",
-  "categories": [
-    "lifestyle",
-    "education"
-  ],
   "icons": [
-    {
-      "src": "./icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    }
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]
 }

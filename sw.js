@@ -1,4 +1,4 @@
-const CACHE_NAME = "kala-chakra-pwa-v2";
+const CACHE_NAME = "kala-chakra-pwa-v8";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -12,12 +12,11 @@ self.addEventListener("install", event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     await cache.addAll(APP_SHELL);
-    // Warm the exact astronomy dependency. Failure to reach the CDN must not block install.
     try {
-      const response = await fetch(ASTRONOMY_ENGINE, { mode: "cors", cache: "reload" });
+      const response = await fetch(ASTRONOMY_ENGINE, { mode: "cors" });
       if (response.ok) await cache.put(ASTRONOMY_ENGINE, response);
     } catch (error) {
-      // Online use can still load the library later; offline astronomy needs one successful fetch.
+      // CDN warm-up is optional; the app shell should still install.
     }
     await self.skipWaiting();
   })());
@@ -26,8 +25,7 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(key => key.startsWith("kala-chakra-pwa-") && key !== CACHE_NAME)
-      .map(key => caches.delete(key)));
+    await Promise.all(keys.filter(key => key.startsWith("kala-chakra-pwa-") && key !== CACHE_NAME).map(key => caches.delete(key)));
     await self.clients.claim();
   })());
 });
@@ -36,40 +34,32 @@ self.addEventListener("fetch", event => {
   const request = event.request;
   if (request.method !== "GET") return;
   const url = new URL(request.url);
-
-  // Keep page navigations fresh, with the last working app as the offline fallback.
   if (request.mode === "navigate") {
     event.respondWith((async () => {
       try {
-        const response = await fetch(request);
-        if (response && response.ok && url.origin === self.location.origin) {
-          const cache = await caches.open(CACHE_NAME);
-          cache.put("./index.html", response.clone());
-        }
-        return response;
-      } catch (error) {
+        const fresh = await fetch(request);
         const cache = await caches.open(CACHE_NAME);
-        return (await cache.match("./index.html")) || (await cache.match("./")) ||
-          new Response("KALA CHAKRA is not available offline yet. Open it once while online.", {
-            status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" }
-          });
+        cache.put("./index.html", fresh.clone());
+        return fresh;
+      } catch (error) {
+        return (await caches.match("./index.html")) || Response.error();
       }
     })());
     return;
   }
-
-  // Same-origin app shell and the pinned Astronomy Engine dependency use cache-first.
-  if (url.origin === self.location.origin || url.href === ASTRONOMY_ENGINE) {
+  if (url.origin === self.location.origin || request.url === ASTRONOMY_ENGINE) {
     event.respondWith((async () => {
-      const cache = await caches.open(CACHE_NAME);
-      const cached = await cache.match(request);
+      const cached = await caches.match(request);
       if (cached) return cached;
       try {
         const response = await fetch(request);
-        if (response && response.ok) cache.put(request, response.clone());
+        if (response.ok) {
+          const cache = await caches.open(CACHE_NAME);
+          cache.put(request, response.clone());
+        }
         return response;
       } catch (error) {
-        return new Response("", { status: 504, statusText: "Offline resource unavailable" });
+        return cached || Response.error();
       }
     })());
   }

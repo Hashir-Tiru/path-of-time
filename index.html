@@ -25,7 +25,7 @@ header{padding:20px 2px 12px;text-align:center}h1{font:500 29px Georgia,serif;le
 @keyframes solarPulse{0%,100%{opacity:.72;transform:scale(.96)}50%{opacity:1;transform:scale(1.06)}}
 .solar-core{transform-box:fill-box;transform-origin:center;animation:solarPulse 5s ease-in-out infinite}
 .reading{text-align:center;margin-top:0}.reading strong{display:block;color:#f3d19a;font:500 21px Georgia,serif}.reading span{font-size:12px;color:var(--muted)}
-.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}.metric{background:#10283b;border:1px solid #29445a;border-radius:10px;padding:10px;text-align:center}.metric small{display:block;color:var(--muted);font-size:11px}.metric b{display:block;color:#f4d7a8;font-size:14px;margin-top:3px}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}.metric{background:#10283b;border:1px solid #29445a;border-radius:10px;padding:11px 8px;text-align:center;min-width:0}.metric small{display:block;color:var(--muted);font-size:12px;font-weight:650;letter-spacing:.2px}.metric b{display:flex;flex-direction:column;gap:4px;color:#f4d7a8;font-size:14px;line-height:1.35;margin-top:7px;overflow-wrap:anywhere}.metric b .point-direction{font-size:15px;color:#f5d49b;font-weight:750}.metric b .point-route{font-size:14px;color:#f1e6d5;font-weight:650}.metric b .point-period{font-size:12px;color:#b9cbd7;font-weight:550}.metric b .point-detail{font-size:11px;color:#a9bac8;font-weight:500;line-height:1.4}
 .hint{text-align:center;color:#92a8b8;font-size:11px;margin:10px 0 0}
 .explain{margin-top:13px;border:1px solid var(--line);border-radius:12px;background:#0b2031;overflow:hidden}
 .explain summary{padding:14px;color:#f0d5a8;cursor:pointer;list-style:none;font-size:14px}.explain summary:after{content:"＋";float:right;color:var(--gold)}.explain[open] summary:after{content:"−"}
@@ -856,7 +856,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <svg id="weatherWheel" class="wheel" viewBox="0 0 500 500" aria-label="Current cycle wheel"></svg>
 <div class="moon-caption" id="moonCaption" style="display:none">Moon phase · current lunar position</div><div class="reading"><strong id="currentName">Daily Cycle</strong><span id="currentSub">The current position in the daily cycle</span></div>
 <div class="metrics"><div class="metric"><small>Current point</small><b id="currentPoint">—</b></div><div class="metric"><small>Next transition</small><b id="nextPoint">—</b></div></div>
-<p class="hint">The dial arrow shows the current position. Swipe left or right to change cycle; expand below to understand it.</p>
+<p class="hint">The dial arrow shows the current position.</p>
 </div>
 <section class="explain weather-description" id="weatherDescription"><div class="explain-body" id="weatherTheory"></div></section>
 <section class="explain weather-tables" id="weatherTables" style="display:none"><div class="explain-body" id="weatherTableContent"></div></section>
@@ -925,7 +925,7 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
   <button class="birth-chip active" data-birthview="day">Day</button><button class="birth-chip" data-birthview="month">Month</button><button class="birth-chip" data-birthview="year">Year</button>
  </div>
  <div id="birthDetailPages">
-  <article class="birth-detail active" data-birthpage="day"><div class="birth-wheel-card"><h3>Daily birth configuration</h3><p class="birth-wheel-status" id="birthDayStatus"></p><svg id="birthDayWheel" class="wheel" viewBox="-38 -24 576 548"></svg></div><div class="birth-explanation" id="birthDayText"></div></article>
+  <article class="birth-detail active" data-birthpage="day"><div class="birth-wheel-card"><h3>Day birth configuration</h3><p class="birth-wheel-status" id="birthDayStatus"></p><svg id="birthDayWheel" class="wheel" viewBox="-38 -24 576 548"></svg></div><div class="birth-explanation" id="birthDayText"></div></article>
   <article class="birth-detail" data-birthpage="month"><div class="birth-wheel-card"><h3>Lunar birth configuration</h3><p class="birth-wheel-status" id="birthMonthStatus"></p><svg id="birthMonthWheel" class="wheel" viewBox="-38 -24 576 548"></svg></div><div class="birth-explanation" id="birthMonthText"></div></article>
   <article class="birth-detail" data-birthpage="year"><div class="birth-wheel-card"><h3>Yearly birth configuration</h3><p class="birth-wheel-status" id="birthYearStatus"></p><svg id="birthYearWheel" class="wheel" viewBox="-38 -24 576 548"></svg></div><div class="birth-explanation" id="birthYearText"></div></article>
   
@@ -1114,12 +1114,9 @@ body[data-theme="kali"] #reclaimAbout{box-shadow:none}
 <summary>7 · KALI — The Transformative Journey</summary>
 <div class="explain-body kali-theory-body">
 <p><strong>Somehow, the body has survived the death of the mind!</strong></p>
-<p>And now Nature thinks this person is dead. She begins the process of reclaiming the space. If we can allow her to do that, we can establish ourselves as the dead — no longer holding on to the old identity, no longer resisting the process of reclamation.</p>
-<p>But is this a glitch in Nature?</p>
-<p><strong>No. It is the backdoor the Mother kept open for her prodigal offspring.</strong></p>
-<p>What appears to be an interruption in the continuity of life may actually be a passage into another way of existing. A way to return, to be reclaimed, and to become part of the larger movement of Prakriti.</p>
+<p>And now Nature thinks this person is dead. She begins the process of reclaiming the space element. If we can allow her to do that, no longer holding on to the old identity, no longer resisting the process of reclamation, dancing around the contents, she will throw that one out of Samsara herself.</p>
+<p>This is not a glitch in Nature; <strong>it is the backdoor the Mother kept open for her prodigal offsprings.</strong></p>
 <p><strong>Everything is Prakriti. Everything is Mother.</strong></p>
-<p><strong>Jai Ma Kali!</strong></p>
 </div>
 </details>
 </section>
@@ -1395,7 +1392,7 @@ function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
  for(let t=0;t<=30;t++){
   const p=polar(t,202),q=polar(t,(t%2===0?190:195));
   h+=`<line x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}" stroke="#c2d0d9" stroke-width="${t%2===0?1.5:.8}" opacity=".8"/>`;
-  const n=polar(t,174);h+=`<text x="${n.x}" y="${n.y+4}" fill="#e2eaf0" font-size="${t%2===0?10:8}" text-anchor="middle">${t}</text>`;
+  const n=polar(t,174);h+=`<text x="${n.x}" y="${n.y+4}" fill="#e2eaf0" font-size="${t%2===0?12:10}" text-anchor="middle">${t}</text>`;
  }
  for(let i=0;i<12;i++){
   const coord=i*2.5,p=polar(coord,222),c=chakraColors[i===6?6:(i<6?i:12-i)];
@@ -1404,19 +1401,20 @@ function drawLunarWheel(now,svgId="weatherWheel",overridePos=null){
   const stateIndex=i;
   const lunarMain=stateIndex===6?"Sahasrara":`${stateIndex<6?"Asc":"Desc"} ${["Muladhara","Swadishtana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadishtana"][stateIndex]}`;
   const lunarMarker=`Tithi ${Math.round(i*2.5)}`;
-  h+=`<text x="${lab.x}" y="${lab.y-4}" fill="#f3d6a4" font-size="8.5" font-weight="600" text-anchor="${anchor}">${lunarMain}</text><text x="${lab.x}" y="${lab.y+9}" fill="#c9d8e2" font-size="7.5" text-anchor="${anchor}">(${lunarMarker})</text>`;
+  h+=`<text x="${lab.x}" y="${lab.y-4}" fill="#f3d6a4" font-size="14" font-weight="700" text-anchor="${anchor}">${lunarMain}</text><text x="${lab.x}" y="${lab.y+14}" fill="#c9d8e2" font-size="12.5" text-anchor="${anchor}">(${lunarMarker})</text>`;
  }
  const pos=overridePos===null?lunarCoordinate(now):overridePos,tip=polar(pos,162),base=polar(pos,148);h+=`<line x1="250" y1="250" x2="${base.x}" y2="${base.y}" stroke="#ffe2a8" stroke-width="4" stroke-linecap="round"/><polygon points="${tip.x},${tip.y} ${base.x-5},${base.y+3} ${base.x+5},${base.y-3}" fill="#ffe2a8"/><circle cx="250" cy="250" r="49" fill="#0a1b2a" stroke="#b7cbd8" stroke-width="1.2"/>`;
  // A simple phase disc: lit fraction grows to full at tithi 15, then shrinks.
  const phase=pos/30,illum=(1-Math.cos(2*Math.PI*phase))/2, waxing=pos<=15;
  h+=`<g clip-path="url(#moonClip)"><circle cx="250" cy="250" r="43" fill="#d9e3e8"/><path d="M250 207 A43 43 0 0 ${waxing?1:0} 250 293 A${Math.max(1,43*Math.abs(1-2*illum))} 43 0 0 ${waxing?0:1} 250 207 Z" fill="#14283a"/></g><circle cx="250" cy="250" r="43" fill="none" stroke="#fff" stroke-width="1.2"/><text x="250" y="310" fill="#e6d1ad" font-size="10" text-anchor="middle">${pos.toFixed(2)} / 30</text>`;
  const lunarState=Math.min(11,Math.floor(pos/2.5));
- const lunarNames=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
- const lunarNextNames=["Swadhisthana","Manipura","Anahata","Vishuddha","Ascending Ajna","Sahasrara","Descending Ajna","Vishuddha","Anahata","Manipura","Swadhisthana","Muladhara"];
+ const lunarNames=["Muladhara","Swadishtana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadishtana"];
+ const lunarNextNames=["Swadishtana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadishtana","Muladhara"];
  const lunarDir=lunarState<6?"Ascending":(lunarState===6?"Turning point":"Descending");
  const lunarTi=Math.min(29,Math.floor(pos))+1;
  const lunarMeta=`Tithi ${lunarTi}`;
- h+=`<text x="250" y="132" fill="#ffe0ad" font-size="16" font-weight="800" text-anchor="middle">${lunarDir}</text><text x="250" y="153" fill="#e1edf5" font-size="12.5" font-weight="600" text-anchor="middle">${lunarNames[lunarState]} to ${lunarNextNames[lunarState]}</text><text x="250" y="173" fill="#e1edf5" font-size="12" font-weight="600" text-anchor="middle">${lunarMeta}</text>`;
+ const lunarTransition=lunarState===6?"Sahasrara":`${lunarNames[lunarState]} to ${lunarNextNames[lunarState]}`;
+ h+=`<text x="250" y="130" fill="#ffe0ad" font-size="20" font-weight="800" text-anchor="middle">${lunarDir}</text><text x="250" y="156" fill="#e1edf5" font-size="16" font-weight="700" text-anchor="middle">${lunarTransition}</text><text x="250" y="181" fill="#e1edf5" font-size="15" font-weight="700" text-anchor="middle">${lunarMeta}</text>`;
  svg.innerHTML=h;
 }
 function drawWheel(id,progress,labels,exactLocalTime=null){
@@ -1445,7 +1443,7 @@ function drawWheel(id,progress,labels,exactLocalTime=null){
   const x2=cx-(major?190:195)*Math.sin(a),y2=cy+(major?190:195)*Math.cos(a);
   html+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c2d0d9" stroke-width="${major?1.5:.8}" opacity=".8"/>`;
   const n={x:cx-174*Math.sin(a),y:cy+174*Math.cos(a)};
-  html+=`<text x="${n.x}" y="${n.y+4}" fill="#e2eaf0" font-size="${dialCount===30?8:9}" text-anchor="middle">${mark}</text>`;
+  html+=`<text x="${n.x}" y="${n.y+4}" fill="#e2eaf0" font-size="${dialCount===30?10:11}" text-anchor="middle">${mark}</text>`;
  }
  const stateNames=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
  for(let i=0;i<12;i++){
@@ -1471,7 +1469,7 @@ function drawWheel(id,progress,labels,exactLocalTime=null){
   }
   let lx=cx-258*Math.sin(a),ly=cy+258*Math.cos(a);
   let anchor=lx<cx-35?"end":lx>cx+35?"start":"middle";
-  html+=`<circle cx="${pt.x}" cy="${pt.y}" r="6.5" fill="${col}" stroke="#fff" stroke-width="1.2"/><text x="${lx}" y="${ly-3}" fill="#f3d6a4" font-size="8.5" font-weight="600" text-anchor="${anchor}">${main}</text><text x="${lx}" y="${ly+9}" fill="#c9d8e2" font-size="7.5" text-anchor="${anchor}">(${marker})</text>`;
+  html+=`<circle cx="${pt.x}" cy="${pt.y}" r="6.5" fill="${col}" stroke="#fff" stroke-width="1.2"/><text x="${lx}" y="${ly-3}" fill="#f3d6a4" font-size="14" font-weight="700" text-anchor="${anchor}">${main}</text><text x="${lx}" y="${ly+14}" fill="#c9d8e2" font-size="12.5" text-anchor="${anchor}">(${marker})</text>`;
  }
  // Centre solar phase: a softly animated sun with a moving terminator-like shadow.
  const phase=isDaily?((p+0.25)%1):p,lit=(1-Math.cos(2*Math.PI*phase))/2,shadow=Math.max(2,43*Math.abs(1-2*lit)),wax=lit<.5;
@@ -1483,20 +1481,30 @@ function drawWheel(id,progress,labels,exactLocalTime=null){
  const wheelDirection=wheelIndex<6?"Ascending":(wheelIndex===6?"Turning point":"Descending");
  let wheelMeta="";
  if(cycleKind==="day"){
-  const hour=(8+wheelIndex*2)%24,h12=hour%12||12;
-  wheelMeta=`${h12}${hour<12?"AM":"PM"}`;
+  // Daily wheel centre always reports clock time, never a cycle/year label.
+  let timeLabel=exactLocalTime;
+  if(!timeLabel){
+   const dateForTime=id.toLowerCase().includes("death")&&window.lastDeathMoment?window.lastDeathMoment:new Date();
+   const zone=(id.toLowerCase().includes("birth")&&document.getElementById("birthZone")?.value.trim())||"Asia/Kolkata";
+   timeLabel=new Intl.DateTimeFormat("en-IN",{timeZone:zone,hour:"numeric",minute:"2-digit",hour12:true}).format(dateForTime);
+  }
+  wheelMeta=`Time: ${timeLabel}`;
  }else if(cycleKind==="lunar"){
-  wheelMeta=`Tithi ${Math.min(30,Math.round((wheelIndex+1)*2.5))}`;
+  wheelMeta=`Tithi ${Math.min(30,Math.floor((p*30))+1)}`;
  }else if(cycleKind==="saturn"){
-  const val=wheelIndex===0?2.5:wheelIndex*2.5;
+  const val=wheelIndex*2.5;
   wheelMeta=`Year ${Number.isInteger(val)?val:val.toFixed(1)}`;
  }else if(cycleKind==="jupiter"){
   wheelMeta=`Year ${wheelIndex+1}`;
  }else{
   wheelMeta=`Lunar cycle ${wheelIndex+1}`;
  }
- const centerState=wheelIndex===6?"Sahasrara":`${wheelIndex<6?"Ascending":"Descending"} ${wheelNames[wheelIndex]}`;
- html+=`<text x="${cx}" y="132" fill="#ffe0ad" font-size="16" font-weight="800" text-anchor="middle">${wheelDirection}</text><text x="${cx}" y="153" fill="#e1edf5" font-size="12.5" font-weight="600" text-anchor="middle">${centerState}</text><text x="${cx}" y="173" fill="#e1edf5" font-size="12" font-weight="600" text-anchor="middle">${wheelMeta}</text>`;
+ const displayNames=["Muladhara","Swadishtana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadishtana"];
+ const nextNames=["Swadishtana","Manipura","Anahata","Vishuddha","Ajna","Sahasrara","Ajna","Vishuddha","Anahata","Manipura","Swadishtana","Muladhara"];
+ const centerTransition=wheelIndex===6?"Sahasrara":`${displayNames[wheelIndex]} to ${nextNames[wheelIndex]}`;
+ if(cycleKind==="year") wheelMeta=`Lunar cycle ${wheelIndex+1}`;
+ const centerDirection=wheelIndex===6?"Turning point":wheelDirection;
+ html+=`<text x="${cx}" y="130" fill="#ffe0ad" font-size="20" font-weight="800" text-anchor="middle">${centerDirection}</text><text x="${cx}" y="156" fill="#e1edf5" font-size="16" font-weight="700" text-anchor="middle">${centerTransition}</text><text x="${cx}" y="181" fill="#e1edf5" font-size="15" font-weight="700" text-anchor="middle">${wheelMeta}</text>`;
  svg.innerHTML=html;
 }
 
@@ -1581,6 +1589,29 @@ function renderDailyWeatherReading(){
   console.error('Daily Energy Reading:',readingError);
  }
 }
+const wheelTransitions=[
+ {direction:"Ascending",from:"Muladhara",to:"Swadhisthana"},
+ {direction:"Ascending",from:"Swadhisthana",to:"Manipura"},
+ {direction:"Ascending",from:"Manipura",to:"Anahata"},
+ {direction:"Ascending",from:"Anahata",to:"Vishuddha"},
+ {direction:"Ascending",from:"Vishuddha",to:"Ajna"},
+ {direction:"Ascending",from:"Ajna",to:"Sahasrara"},
+ {direction:"Descending",from:"Sahasrara",to:"Ajna"},
+ {direction:"Descending",from:"Ajna",to:"Vishuddha"},
+ {direction:"Descending",from:"Vishuddha",to:"Anahata"},
+ {direction:"Descending",from:"Anahata",to:"Manipura"},
+ {direction:"Descending",from:"Manipura",to:"Swadhisthana"},
+ {direction:"Descending",from:"Swadhisthana",to:"Muladhara"}
+];
+function pointMarkup(direction,from,to,period,detail=""){
+ return `<span class="point-direction">${direction}</span><span class="point-route">${from} to ${to}</span><span class="point-period">${period}</span>${detail?`<span class="point-detail">${detail}</span>`:""}`;
+}
+function istDateTime(date){return date.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric",timeZone:"Asia/Kolkata"})+" · "+date.toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"})+" IST";}
+function setPointCards(current,next){
+ document.getElementById("currentPoint").innerHTML=current;
+ document.getElementById("nextPoint").innerHTML=next;
+}
+function addFractionalYears(date,years){return new Date(date.getTime()+years*365.2425*86400000);}
 function updateLongCycleWeather(kind){
  const now=new Date();
  let record=null;
@@ -1623,8 +1654,15 @@ function updateLongCycleWeather(kind){
  window.selectedWeatherCycle=kind;
  drawWheel("weatherWheel",stage/12,Array.from({length:12},(_,i)=>`Year ${i+1}`));
  document.getElementById("currentSub").textContent=`Calculated from your saved Birth Moment · Current age ${age.years} years${age.fraction?` + ${(age.fraction*12).toFixed(1)} months`:""}`;
- document.getElementById("currentPoint").textContent=`${phase.name} · ${phase.direction} · Year ${Math.floor(elapsed)+1} of ${period}`;
- document.getElementById("nextPoint").textContent=`${yearsRemaining.toFixed(2)} years until the next ${kind==="jupiter"?"Jupiter":"Saturn"} cycle`;
+ const segmentYears=period/12,segmentIndex=Math.min(11,Math.floor(elapsed/segmentYears));
+ const transition=wheelTransitions[segmentIndex],nextTransition=wheelTransitions[(segmentIndex+1)%12];
+ const segmentStart=addFractionalYears(birth,Math.floor(elapsed/segmentYears)*segmentYears);
+ const segmentEnd=addFractionalYears(birth,(Math.floor(elapsed/segmentYears)+1)*segmentYears);
+ const periodLabel=kind==="jupiter"?`Year ${segmentIndex+1}`:`Cycle ${segmentIndex+1} · ${segmentYears.toFixed(1)} years`;
+ setPointCards(
+  pointMarkup(transition.direction,transition.from,transition.to,periodLabel,`${istDateTime(segmentStart)} – ${istDateTime(segmentEnd)}`),
+  pointMarkup(nextTransition.direction,nextTransition.from,nextTransition.to,kind==="jupiter"?`Year ${((segmentIndex+1)%12)+1}`:`Cycle ${((segmentIndex+1)%12)+1}`,`Starts ${istDateTime(segmentEnd)}`)
+ );
  document.getElementById("today").textContent=now.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})+" · "+now.toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit"});
  document.getElementById("weatherTheory").innerHTML=`<h3>${kind==="jupiter"?"Jupiter's 12-year rhythm":"Saturn's 30-year rhythm"}</h3><p>From your Birth Moment to today, <strong>${age.total.toFixed(2)} years</strong> have elapsed. You have completed <strong>${cyclesCompleted} full ${kind==="jupiter"?"Jupiter":"Saturn"} cycle${cyclesCompleted===1?"":"s"}</strong>. You are now in <strong>${phase.name}</strong>, in the ${phase.direction} movement — Year ${Math.floor(elapsed)+1} of the current ${period}-year cycle.</p><p>The wheel shows the current position within this cycle. Each new cycle returns to Muladhara as its starting point.</p>`;
  document.getElementById("weatherTableContent").innerHTML=`<div class="entry-grid"><div class="entry"><b>Age</b><br>${age.total.toFixed(2)} years</div><div class="entry"><b>Completed cycles</b><br>${cyclesCompleted}</div><div class="entry"><b>Current cycle year</b><br>${Math.floor(elapsed)+1} / ${period}</div><div class="entry"><b>Cycle progress</b><br>${(elapsed/period*100).toFixed(1)}%</div></div>`;
@@ -1677,14 +1715,28 @@ function updateWeather(){
  document.getElementById("currentSub").textContent=selected==="daily"?"Live local-time position":selected==="lunar"?"Live astronomical lunar position · geocentric elongation":"Current yearly wheel position · Cycle 8";
  let currentText=d.labels[i]||"—";
  if(selected==="daily"){
-  const mins=(now.getHours()*60+now.getMinutes()+1440-360)%1440,seg=Math.floor(mins/120);
-  const names=["Muladhara","Swadhisthana","Manipura","Anahata","Vishuddha","Ascending Ajna","Sahasrara","Descending Ajna","Vishuddha","Anahata","Manipura","Swadhisthana"];
-  currentText=(seg===6?"Turning point\nSahasrara to Descending Ajna\n"+d.labels[seg]:(seg<6?"Ascending":"Descending")+" · "+names[seg]+" to "+(["Swadhisthana","Manipura","Anahata","Vishuddha","Ascending Ajna","Sahasrara","Descending Ajna","Vishuddha","Anahata","Manipura","Swadhisthana","Muladhara"][seg])+" · "+d.labels[seg]);
+  const localNow=new Date(now.toLocaleString("en-US",{timeZone:"Asia/Kolkata"}));
+  const mins=(localNow.getHours()*60+localNow.getMinutes()+localNow.getSeconds()/60+1440-360)%1440;
+  const seg=Math.min(11,Math.floor(mins/120)),startMinutes=(6*60+seg*120)%1440,endMinutes=(startMinutes+120)%1440;
+  const clock=m=>{const h=Math.floor(m/60)%24,mm=m%60;return `${h%12||12}:${String(Math.floor(mm)).padStart(2,"0")} ${h<12?"AM":"PM"}`;};
+  const tr=wheelTransitions[seg],nt=wheelTransitions[(seg+1)%12];
+  const nowLabel=now.toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"});
+  setPointCards(pointMarkup(tr.direction,tr.from,tr.to,`(${clock(startMinutes)} to ${clock(endMinutes)})`,`Time: ${nowLabel}`),pointMarkup(nt.direction,nt.from,nt.to,`(${clock(endMinutes)} to ${clock((endMinutes+120)%1440)})`));
+ }else if(selected==="lunar"){
+  const snap=lunarSnapshot(now),idx=snap.stateIndex,tr=wheelTransitions[idx],nt=wheelTransitions[(idx+1)%12];
+  const stateStart=findLunarBoundary(now,idx*2.5,-1),stateEnd=findLunarBoundary(now,(idx+1)*2.5,1);
+  const nextBoundary=stateEnd;
+  const ordinal=n=>`${n}${n%100>=11&&n%100<=13?"th":({1:"st",2:"nd",3:"rd"}[n%10]||"th")}`;
+  const tithiLine=`Tithi now: ${snap.tithiName} (${ordinal(snap.tithiNumber)} lunar day)`;
+  const range=stateStart&&stateEnd?`${istDateTime(stateStart)} – ${istDateTime(stateEnd)}`:"Gregorian range unavailable";
+  const nextTithiNumber=(Math.floor((idx+1)*2.5)+1);
+  setPointCards(pointMarkup(tr.direction,tr.from,tr.to,range,tithiLine),pointMarkup(nt.direction,nt.from,nt.to,nextTithiNumber<=30?`Tithi ${nextTithiNumber} boundary`:`Next lunar cycle`,`Starts ${nextBoundary?istDateTime(nextBoundary):"time unavailable"}`));
+ }else if(selected==="yearly"){
+  const idx=Math.max(0,Math.min(11,i)),tr=wheelTransitions[idx],nt=wheelTransitions[(idx+1)%12];
+  let bounds=null;try{bounds=lunarCycleBounds(now);}catch(e){}
+  const range=bounds&&bounds.start&&bounds.end?`${istDateTime(bounds.start)} – ${istDateTime(bounds.end)}`:"Gregorian range unavailable";
+  setPointCards(pointMarkup(tr.direction,tr.from,tr.to,`Lunar cycle ${idx+1}`,range),pointMarkup(nt.direction,nt.from,nt.to,`Lunar cycle ${((idx+1)%12)+1}`,`Starts ${bounds&&bounds.end?istDateTime(bounds.end):"time unavailable"}`));
  }
- if(selected==="lunar"){const s=lunarSnapshot(now);currentText=`${s.direction} · ${s.chakra} to ${s.nextChakra} · ${s.tithiName}`;}
- if(selected==="yearly") currentText=d.labels[i]||"Current yearly position";
- document.getElementById("currentPoint").textContent=currentText;
- document.getElementById("nextPoint").textContent=d.next();
  document.getElementById("today").textContent=dateText+" · "+timeText+" IST";
  const tableContent=document.getElementById("weatherTableContent");
  const tableSection=document.getElementById("weatherTables");
@@ -1703,8 +1755,7 @@ function updateWeather(){
   tables=`<h3>Lunar chakra transition schedule</h3><p class="note">${cycleLabel}</p><table class="lunar-table"><thead><tr><th>Tithi coordinate</th><th>Chakra</th><th>Movement</th><th>Transition</th></tr></thead><tbody>${rows}</tbody></table><p class="note">Current position: ${pos.toFixed(3)} / 30 · ${currentTithi} · ${snap.chakra} (${snap.direction}). Tithi is calculated from the current geocentric apparent Moon–Sun longitude difference; each tithi spans 12°.</p>`;
   document.getElementById("moonCaption").style.display="block";
   document.getElementById("currentSub").textContent="Live astronomical position · geocentric Moon–Sun elongation";
-  document.getElementById("currentPoint").textContent=`${snap.direction} · ${snap.chakra} to ${snap.nextChakra} · ${currentTithi}`;
-  document.getElementById("nextPoint").textContent=nextState&&nextState.time?`${nextState.chakra} · ${fmtDate(nextState.time.toISOString(),true)} ${fmtTime(nextState.time.toISOString())}`:(nextTithi?`Next tithi boundary · ${fmtDate(nextTithi.toISOString(),true)} ${fmtTime(nextTithi.toISOString())}`:"Boundary unavailable");
+
  }else if(selected==="yearly"){
   const yearlyDates=[
    [1,"17 February – 19 March 2026","Swadhisthana"],
@@ -1941,7 +1992,7 @@ function calcBirthImprint(){
  document.getElementById('birthDayStatus').textContent=`${dayNow.name} · ${dayNow.direction} · ${lp.hour}:${lp.minute} local birth time`;
  document.getElementById('birthMonthStatus').textContent=`${monthNow.name} · ${monthNow.direction} · ${elong.toFixed(1)}° Moon–Sun elongation`;
  document.getElementById('birthYearStatus').textContent=`${yearNow.name} · ${yearNow.direction} · Cycle ${yearInfo.cycle} · estimated annual anchor`;
- document.getElementById('birthDayText').innerHTML=`<h3>Daily cycle at birth</h3><p>The birth moment falls in <strong>${dayNow.name}</strong>, in the ${dayNow.direction} movement. The daily wheel begins at 6 AM, reaches its Sahasrara point at 6 PM, then moves through Descending towards the next 6 AM.</p>`;
+ document.getElementById('birthDayText').innerHTML=`<h3>Day cycle at birth</h3><p>The birth moment falls in <strong>${dayNow.name}</strong>, in the ${dayNow.direction} movement. The daily wheel begins at 6 AM, reaches its Sahasrara point at 6 PM, then moves through Descending towards the next 6 AM.</p>`;
  document.getElementById('birthMonthText').innerHTML=`<h3>Lunar cycle at birth</h3><p>The Moon–Sun angular separation places the birth moment in <strong>${monthNow.name}</strong>, in the ${monthNow.direction} movement. The wheel records the lunar phase configuration at birth.</p>`;
  document.getElementById('birthYearText').innerHTML=`<h3>Yearly cycle at birth</h3><p>The birth moment maps to <strong>${yearNow.name}</strong>, in the ${yearNow.direction} movement, within Cycle ${yearInfo.cycle}. The current yearly anchor is an estimate pending Panchanga validation.</p>`;
  const birthCycleConfiguration=[
@@ -2216,7 +2267,8 @@ document.getElementById("saveDeath").addEventListener("click",()=>{
  ];
  document.getElementById("deathCycleConfiguration").innerHTML=
   `<table class="chakra-table"><thead><tr><th>Cycle</th><th>Configuration</th></tr></thead><tbody>${configurationRows.map(([cycle,configuration])=>`<tr><td>${cycle}</td><td><strong>${configuration}</strong></td></tr>`).join("")}</tbody></table>`;
- drawWheel("deathDayWheel",dayStage/12,Array.from({length:12},(_,i)=>`State ${i+1}`));
+ const deathClock=new Intl.DateTimeFormat("en-IN",{timeZone:zone,hour:"numeric",minute:"2-digit",hour12:true}).format(deathMomentLocal);
+ drawWheel("deathDayWheel",dayStage/12,Array.from({length:12},(_,i)=>`State ${i+1}`),deathClock);
  drawLunarWheel(deathMomentLocal,"deathLunarWheel");
  drawWheel("deathYearWheel",yearInfo.stage/12,Array.from({length:12},(_,i)=>`Cycle ${i+1}`));
  drawWheel("deathJupiterWheel",jupiterStage/12,Array.from({length:12},(_,i)=>`Cycle ${i+1}`));
