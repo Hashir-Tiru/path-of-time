@@ -1,4 +1,4 @@
-const CACHE_NAME = "kala-chakra-pwa-v20";
+const CACHE_NAME = "kala-chakra-pwa-v43";
 const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png"];
 const ASTRONOMY_ENGINE = "https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js";
 

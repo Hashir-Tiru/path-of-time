@@ -1,6 +1,6 @@
-# KALA CHAKRA PWA — v20
+# KALA CHAKRA PWA — v43
 
-This package contains the latest KALA CHAKRA Mobile v20 HTML as the installable PWA.
+This package contains the KALA CHAKRA Mobile v43 HTML as the installable PWA.
 
 ## Publish/update
 
@@ -12,9 +12,9 @@ This package contains the latest KALA CHAKRA Mobile v20 HTML as the installable 
 
 ## Package contents
 
-- `index.html` — exact copy of KALA CHAKRA Mobile v20
+- `index.html` — exact copy of KALA CHAKRA Mobile v43
 - `manifest.webmanifest` — installable app metadata
-- `sw.js` — app-shell and offline caching, cache version v20
+- `sw.js` — app-shell and offline caching, cache version v43
 - `icons/` — KALA CHAKRA app icons
 
 Personal records remain in browser storage for that browser and device. There is no cloud synchronisation or user-facing export/import feature. Records stored under a different origin or local-file context do not automatically transfer.
